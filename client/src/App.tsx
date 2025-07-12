@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ChevronDown, DollarSign, Clock, Users, Shield, ArrowRight, CheckCircle, Star, Phone, Mail, MapPin, TrendingUp, Building, Utensils, Warehouse, ChevronLeft, ChevronRight, Plus, Minus } from 'lucide-react';
+import { ChevronDown, DollarSign, Clock, Users, Shield, ArrowRight, CheckCircle, Star, Phone, Mail, MapPin, TrendingUp, Building, Utensils, Warehouse, ChevronLeft, ChevronRight, Plus, Minus, Upload, FileCheck, Banknote } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 import { QueryClientProvider } from '@tanstack/react-query';
@@ -601,7 +601,7 @@ function DirectCapitalApp() {
               {/* Step 1: Submit */}
               <div className="text-center">
                 <div className="w-16 h-16 bg-white border border-gray-200 rounded flex items-center justify-center mx-auto mb-6 shadow-sm">
-                  <span className="text-xl font-medium text-gray-900">1</span>
+                  <Upload className="h-8 w-8 text-[#5A00E0]" />
                 </div>
                 <h3 className="text-2xl font-medium mb-3 text-gray-900">Submit</h3>
                 <p className="text-gray-600 font-light">Quick form. Zero paperwork upfront.</p>
@@ -610,7 +610,7 @@ function DirectCapitalApp() {
               {/* Step 2: Approve */}
               <div className="text-center">
                 <div className="w-16 h-16 bg-white border border-gray-200 rounded flex items-center justify-center mx-auto mb-6 shadow-sm">
-                  <span className="text-xl font-medium text-gray-900">2</span>
+                  <FileCheck className="h-8 w-8 text-[#5A00E0]" />
                 </div>
                 <h3 className="text-2xl font-medium mb-3 text-gray-900">Approve</h3>
                 <p className="text-gray-600 font-light">Terms in 24 hours. No surprises.</p>
@@ -619,7 +619,7 @@ function DirectCapitalApp() {
               {/* Step 3: Fund */}
               <div className="text-center">
                 <div className="w-16 h-16 bg-white border border-gray-200 rounded flex items-center justify-center mx-auto mb-6 shadow-sm">
-                  <span className="text-xl font-medium text-gray-900">3</span>
+                  <Banknote className="h-8 w-8 text-[#5A00E0]" />
                 </div>
                 <h3 className="text-2xl font-medium mb-3 text-gray-900">Fund</h3>
                 <p className="text-gray-600 font-light">Capital deployed in days.</p>
