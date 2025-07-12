@@ -14,7 +14,7 @@ export default function MinimalNav() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white/80 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -49,9 +49,7 @@ export default function MinimalNav() {
                 fill="#5A00E0"
               />
             </svg>
-            <span className={`text-xl font-bold tracking-tight transition-colors ${
-              isScrolled ? 'text-gray-900' : 'text-white'
-            }`}>
+            <span className="text-xl font-bold tracking-tight text-gray-900 transition-colors">
               BRIXBUX
             </span>
           </a>
@@ -61,24 +59,16 @@ export default function MinimalNav() {
             {/* Desktop Link */}
             <a 
               href="https://brixbux.com"
-              className={`hidden lg:inline-block text-sm font-medium transition-all duration-200 relative group ${
-                isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/90 hover:text-white'
-              }`}
+              className="hidden lg:inline-block text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-200 relative group"
             >
               Back to Main Site
-              <span className={`absolute -bottom-0.5 left-0 w-full h-px transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100 ${
-                isScrolled ? 'bg-gray-900' : 'bg-white'
-              }`}></span>
+              <span className="absolute -bottom-0.5 left-0 w-full h-px bg-gray-900 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100"></span>
             </a>
 
             {/* Mobile Button */}
             <a 
               href="https://brixbux.com"
-              className={`lg:hidden block px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                isScrolled 
-                  ? 'bg-gray-100 text-gray-700 hover:bg-gray-200' 
-                  : 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20'
-              }`}
+              className="lg:hidden block px-4 py-2 rounded-md text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all duration-200"
             >
               Back to Main Site
             </a>
