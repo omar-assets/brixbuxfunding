@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '@/lib/queryClient';
 import LeadForm from '@/components/LeadForm';
+import { FeaturesSectionWithHoverEffects } from '@/components/ui/feature-section-with-hover-effects';
 
 // Animated Stats Component
 interface AnimatedStatProps {
@@ -363,8 +364,7 @@ function DirectCapitalApp() {
         </div>
       </section>
       {/* USP Section */}
-      <section id="usp" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">{/* Clean professional background */}
-        
+      <section id="usp" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-4xl lg:text-5xl mb-6">
@@ -374,67 +374,7 @@ function DirectCapitalApp() {
             <p className="text-base text-gray-500 max-w-2xl mx-auto">Why ISOs and developers choose us over traditional lenders</p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="usp-card p-8 rounded-2xl cursor-pointer group">
-              <div className="card-content">
-                <div className="icon-wrapper mb-6">
-                  <Shield className="h-8 w-8 text-gray-600" />
-                </div>
-                <h3 className="text-xl font-medium mb-4 text-gray-900">Fund Direct</h3>
-                <p className="text-gray-600 leading-relaxed font-light">No middlemen, no brokers. We make decisions in-house and fund directly from our own capital.</p>
-              </div>
-            </div>
-            
-            <div className="usp-card p-8 rounded-2xl cursor-pointer group">
-              <div className="card-content">
-                <div className="icon-wrapper mb-6">
-                  <Clock className="h-8 w-8 text-gray-600" />
-                </div>
-                <h3 className="text-xl font-medium mb-4 text-gray-900">Fast Terms</h3>
-                <p className="text-gray-600 leading-relaxed font-light">Submit today, get terms tomorrow. Fast decisions mean you never lose a time-sensitive deal.</p>
-              </div>
-            </div>
-            
-            <div className="usp-card p-8 rounded-2xl cursor-pointer group">
-              <div className="card-content">
-                <div className="icon-wrapper mb-6">
-                  <DollarSign className="h-8 w-8 text-gray-600" />
-                </div>
-                <h3 className="text-xl font-medium mb-4 text-gray-900">Big Deals</h3>
-                <p className="text-gray-600 leading-relaxed font-light">$50K to $20M+ financing capability. We handle deals others can't or won't fund.</p>
-              </div>
-            </div>
-            
-            <div className="usp-card p-8 rounded-2xl cursor-pointer group">
-              <div className="card-content">
-                <div className="icon-wrapper mb-6">
-                  <CheckCircle className="h-8 w-8 text-gray-600" />
-                </div>
-                <h3 className="text-xl font-medium mb-4 text-gray-900">Custom Fit</h3>
-                <p className="text-gray-600 leading-relaxed font-light">MCA, bridge loans, hard money, and hybrid structures tailored to your deal's unique needs.</p>
-              </div>
-            </div>
-            
-            <div className="usp-card p-8 rounded-2xl cursor-pointer group">
-              <div className="card-content">
-                <div className="icon-wrapper mb-6">
-                  <Users className="h-8 w-8 text-gray-600" />
-                </div>
-                <h3 className="text-xl font-medium mb-4 text-gray-900">Trusted Partner</h3>
-                <p className="text-gray-600 leading-relaxed font-light">We build lasting relationships with ISOs and repeat clients for ongoing deal flow.</p>
-              </div>
-            </div>
-            
-            <div className="usp-card p-8 rounded-2xl cursor-pointer group">
-              <div className="card-content">
-                <div className="icon-wrapper mb-6">
-                  <ArrowRight className="h-8 w-8 text-gray-600" />
-                </div>
-                <h3 className="text-xl font-medium mb-4 text-gray-900">Nationwide</h3>
-                <p className="text-gray-600 leading-relaxed font-light">Licensed and operating across all 50 states. Local expertise, national capability.</p>
-              </div>
-            </div>
-          </div>
+          <FeaturesSectionWithHoverEffects />
           
           <div className="text-center mt-20">
             <button className="bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-12 py-4 rounded text-lg font-medium transition-all duration-200 uppercase tracking-wider">
