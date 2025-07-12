@@ -1,8 +1,69 @@
 import express, { type Request, Response, NextFunction } from "express";
+import helmet from "helmet";
+import compression from "compression";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
+
+// Security middleware
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: [
+        "'self'",
+        "'unsafe-inline'",
+        "https://fonts.googleapis.com",
+      ],
+      fontSrc: [
+        "'self'",
+        "https://fonts.gstatic.com",
+      ],
+      scriptSrc: [
+        "'self'",
+        ...(process.env.NODE_ENV === "development" ? [
+          "'unsafe-inline'",
+          "'unsafe-eval'",
+          "https://replit.com",
+          "https://cdn.replit.com",
+        ] : []),
+      ],
+      imgSrc: [
+        "'self'",
+        "data:",
+        "https:",
+      ],
+      connectSrc: [
+        "'self'",
+        ...(process.env.NODE_ENV === "development" ? [
+          "ws:",
+          "wss:",
+          "http://localhost:*",
+          "https://localhost:*",
+        ] : []),
+      ],
+      ...(process.env.NODE_ENV === "development" ? {
+        frameSrc: ["'self'", "https://replit.com"],
+        objectSrc: ["'none'"],
+      } : {}),
+    },
+  },
+  crossOriginEmbedderPolicy: false, // Disable for compatibility
+}));
+
+// Compression middleware
+app.use(compression({
+  level: 6,
+  threshold: 1024,
+  filter: (req, res) => {
+    if (req.headers['x-no-compression']) {
+      return false;
+    }
+    return compression.filter(req, res);
+  },
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
