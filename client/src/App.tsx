@@ -577,12 +577,14 @@ function DirectCapitalApp() {
           
           {/* Process Flow with Visual Connectors */}
           <div className="relative">
-            {/* Progress Line Background */}
-            <div className="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-white/10 rounded-full"></div>
-            {/* Animated Progress Line */}
-            <div className="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-[#9F85FF] via-[#6B65FF] to-[#5A00E0] rounded-full progress-line"></div>
-            
             <div className="grid md:grid-cols-3 gap-8 relative">
+              {/* Connecting Lines - placed behind circles */}
+              <div className="hidden md:block absolute top-10 left-1/3 w-1/3 h-0.5 bg-white/20 rounded-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#9F85FF] to-[#6B65FF] rounded-full progress-line"></div>
+              </div>
+              <div className="hidden md:block absolute top-10 right-1/3 w-1/3 h-0.5 bg-white/20 rounded-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#6B65FF] to-[#5A00E0] rounded-full progress-line" style={{animationDelay: '1s'}}></div>
+              </div>
               {/* Step 1: Submit */}
               <div className="text-center group relative">
                 <div className="relative z-10 w-20 h-20 bg-gradient-to-br from-[#9F85FF] to-[#6B65FF] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#9F85FF]/50 transition-all duration-300 cursor-pointer step-glow step-pulse">
