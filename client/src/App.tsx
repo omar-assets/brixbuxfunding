@@ -5,7 +5,7 @@ import CountUp from 'react-countup';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '@/lib/queryClient';
 import LeadForm from '@/components/LeadForm';
-import Navigation from '@/components/Navigation';
+import MinimalNav from '@/components/MinimalNav';
 import { FeaturesSectionWithHoverEffects } from '@/components/ui/feature-section-with-hover-effects';
 
 // Animated Stats Component
@@ -237,7 +237,7 @@ function BrixbuxFundingApp() {
 
   return (
     <div className="min-h-screen light-gradient-bg text-gray-900">
-      <Navigation onGetPreApproved={handleGetPreApproved} />
+      <MinimalNav />
       {/* Hero Section */}
       <section className="pt-40 pb-32 px-4 sm:px-6 lg:px-8">
         {/* Professional subtle background pattern */}
