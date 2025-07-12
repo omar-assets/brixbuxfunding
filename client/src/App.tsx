@@ -1,8 +1,52 @@
 import { useState, useEffect, useRef } from 'react';
-import { ChevronDown, DollarSign, Clock, Users, Shield, ArrowRight, CheckCircle, Star, Phone, Mail, MapPin, TrendingUp, Building, Utensils, Warehouse, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronDown, DollarSign, Clock, Users, Shield, ArrowRight, CheckCircle, Star, Phone, Mail, MapPin, TrendingUp, Building, Utensils, Warehouse, ChevronLeft, ChevronRight, Plus, Minus } from 'lucide-react';
+import { useInView } from 'react-intersection-observer';
+import CountUp from 'react-countup';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '@/lib/queryClient';
 import LeadForm from '@/components/LeadForm';
+
+// Animated Stats Component
+interface AnimatedStatProps {
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  label: string;
+  delay: number;
+}
+
+function AnimatedStat({ value, prefix = '', suffix = '', label, delay }: AnimatedStatProps) {
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true
+  });
+
+  return (
+    <div ref={ref} className="transform hover:scale-105 transition-transform duration-500 group">
+      <div className="relative">
+        <div className="text-4xl font-bold text-[#9F85FF] mb-2 group-hover:text-[#8B5CF6] transition-colors duration-300">
+          {prefix}
+          {inView ? (
+            <CountUp
+              start={0}
+              end={value}
+              duration={2}
+              delay={delay / 1000}
+              preserveValue={true}
+            />
+          ) : (
+            0
+          )}
+          {suffix}
+        </div>
+        <p className="text-white/80 font-semibold text-sm uppercase tracking-wide group-hover:text-white transition-colors duration-300">
+          {label}
+        </p>
+        <div className="absolute -inset-2 bg-gradient-to-r from-[#9F85FF]/20 to-[#5A00E0]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+      </div>
+    </div>
+  );
+}
 
 function DirectCapitalApp() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -626,34 +670,46 @@ function DirectCapitalApp() {
         </div>
       </section>
 
-      {/* Credibility Section */}
+      {/* Enhanced Stats Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20 animate-on-scroll">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="transform hover:scale-105 transition-transform duration-300">
-              <div className="text-4xl font-bold text-[#9F85FF] mb-2">500+</div>
-              <p className="text-white/80">Projects Funded</p>
-            </div>
-            <div className="transform hover:scale-105 transition-transform duration-300">
-              <div className="text-4xl font-bold text-[#9F85FF] mb-2">$200M+</div>
-              <p className="text-white/80">Capital Deployed</p>
-            </div>
-            <div className="transform hover:scale-105 transition-transform duration-300">
-              <div className="text-4xl font-bold text-[#9F85FF] mb-2">24hrs</div>
-              <p className="text-white/80">Average Response</p>
-            </div>
-            <div className="transform hover:scale-105 transition-transform duration-300">
-              <div className="text-4xl font-bold text-[#9F85FF] mb-2">50</div>
-              <p className="text-white/80">States Licensed</p>
-            </div>
+            <AnimatedStat
+              value={500}
+              suffix="+"
+              label="Deals Closed"
+              delay={0}
+            />
+            <AnimatedStat
+              value={200}
+              prefix="$"
+              suffix="M+"
+              label="Capital Deployed"
+              delay={200}
+            />
+            <AnimatedStat
+              value={24}
+              suffix="hrs"
+              label="Avg. Response"
+              delay={400}
+            />
+            <AnimatedStat
+              value={50}
+              suffix=""
+              label="States Licensed"
+              delay={600}
+            />
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Enhanced FAQ Section */}
       <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 animate-on-scroll">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Frequently Asked Questions</h2>
+          <div className="text-center mb-16">
+            <p className="text-[#9F85FF] font-semibold mb-4">Have questions? We have answers.</p>
+            <h2 className="text-4xl font-bold">Frequently Asked Questions</h2>
+          </div>
           
           <div className="space-y-4">
             {[
@@ -674,17 +730,27 @@ function DirectCapitalApp() {
                 a: "Yes, we specialize in partnering with ISOs. We offer competitive commission structures and fast turnaround times to help you close more deals and build lasting client relationships."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div key={index} className="bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-500 hover:border-[#9F85FF]/30 group">
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full p-6 text-left flex justify-between items-center transition-colors"
+                  className="w-full p-6 text-left flex justify-between items-center transition-colors group-hover:text-[#9F85FF]"
                 >
-                  <span className="text-lg font-semibold">{faq.q}</span>
-                  <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${expandedFaq === index ? 'rotate-180' : ''}`} />
+                  <span className="text-lg font-semibold pr-4">{faq.q}</span>
+                  <div className="flex-shrink-0">
+                    {expandedFaq === index ? (
+                      <Minus className="h-5 w-5 transition-all duration-300 text-[#9F85FF] transform rotate-0" />
+                    ) : (
+                      <Plus className="h-5 w-5 transition-all duration-300 group-hover:text-[#9F85FF] transform rotate-0" />
+                    )}
+                  </div>
                 </button>
-                <div className={`overflow-hidden transition-all duration-300 ${expandedFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="px-6 pb-6">
-                    <p className="text-white/80">{faq.a}</p>
+                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  expandedFaq === index 
+                    ? 'max-h-96 opacity-100 pb-6' 
+                    : 'max-h-0 opacity-0 pb-0'
+                }`}>
+                  <div className="px-6 border-t border-white/10 pt-4">
+                    <p className="text-white/80 leading-relaxed">{faq.a}</p>
                   </div>
                 </div>
               </div>
