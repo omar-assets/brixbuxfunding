@@ -1,0 +1,77 @@
+I want you to scan my entire codebase for the landing page of my funding company website. The current design feels too tech-forward and SaaS-like. I need a plan to transform the UI/UX into a more professional, finance-focused, high-capital funding firm aesthetic, while keeping my current content structure and existing brand colors.
+
+---
+
+# Goal
+
+Transform the website’s look and feel to match a high-end private equity or institutional finance brand — professional, authoritative, sophisticated — instead of a startup SaaS style.
+
+---
+
+# Keep the following as-is
+
+- All content sections, text copy, and layout structure (hero, USPs, case studies, process, final CTA, FAQ).
+- Existing brand colors: #5A00E0 (accent), #6B65FF (background), #FFFFFF (text), #9F85FF (buttons), #5A00E0 (links).
+
+---
+
+# Change & Recommendations
+
+## Typography
+
+- Identify current fonts and suggest replacing them with more professional finance-oriented fonts.
+- Suggested font families: "Neue Haas Grotesk", "Helvetica Neue", "Inter", or a serif/sans-serif pair (e.g., "Playfair Display" for headings and "Inter" for body).
+- Adjust font weights and hierarchy for a strong, confident, elegant look.
+
+## Buttons & CTAs
+
+- Update buttons to have crisper edges or minimal rounding (e.g., 4px).
+- Remove neon or heavy glow effects, instead use subtle border accents or soft shadows.
+- Improve hover states to be clean (e.g., subtle darkening or thin border highlight rather than bright glow).
+
+## Layout & Spacing
+
+- Increase whitespace between sections and around elements to create a sense of premium minimalism.
+- Ensure clear, structured grid layouts with balanced alignment.
+- Remove large or flashy animated backgrounds and replace with understated solid or slightly textured backgrounds.
+
+## Iconography
+
+- Replace or adjust icons to use thin line icons or minimal flat icons, consistent in style and stroke weight.
+- Remove playful or rounded icon shapes.
+
+## Backgrounds & Visuals
+
+- Remove or minimize animated geometric or futuristic patterns.
+- Recommend adding muted finance-themed images (e.g., cityscapes, professional business imagery) in a subtle, blended style.
+- Use abstract patterns only as very light overlays if necessary for depth.
+
+## Micro-interactions
+
+- Review and simplify animations: keep fade-ins and gentle slides only.
+- Remove exaggerated bouncy or overscaled interactions.
+- Add subtle, classy hover effects on links and buttons.
+
+---
+
+# Output I need from you
+
+Create a **detailed step-by-step implementation plan** with code pointers and file-specific instructions. Specify:
+
+- Which components or files to edit (e.g., HeroSection.jsx, Button.tsx, global.css).
+- Which CSS/JS classes to adjust or replace.
+- Font import and setup instructions.
+- Any suggested code snippets or sample refactors.
+
+---
+
+# Deliverable
+
+Produce a complete, ready-to-copy implementation plan I can paste into my Replit Coding Agent so it can automatically perform the changes seamlessly and accurately across the entire codebase.
+
+---
+
+# Reminder
+
+Keep the current content structure and brand colors exactly as they are. Focus only on transforming the design language and visual system to feel more professional and finance-focused.
+
