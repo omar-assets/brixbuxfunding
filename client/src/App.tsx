@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '@/lib/queryClient';
 import LeadForm from '@/components/LeadForm';
+import Navigation from '@/components/Navigation';
 import { FeaturesSectionWithHoverEffects } from '@/components/ui/feature-section-with-hover-effects';
 
 // Animated Stats Component
@@ -227,27 +228,16 @@ function DirectCapitalApp() {
     }, 5000);
   };
 
+  const handleGetPreApproved = () => {
+    const formElement = document.querySelector('#lead-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen light-gradient-bg text-gray-900">
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white z-50 border-b border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-3">
-              <DollarSign className="h-6 w-6 text-[#5A00E0]" />
-              <span className="text-xl font-medium tracking-tight">DirectCapital</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#how-it-works" className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium">How It Works</a>
-              <a href="#case-studies" className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium">Case Studies</a>
-              <a href="#faq" className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium">FAQ</a>
-              <button className="bg-[#5A00E0] hover:bg-[#4A00D0] px-8 py-2.5 rounded font-medium transition-all duration-200 text-sm uppercase tracking-wider text-white">
-                Get Pre-Approved
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navigation onGetPreApproved={handleGetPreApproved} />
       {/* Hero Section */}
       <section className="pt-40 pb-32 px-4 sm:px-6 lg:px-8">
         {/* Professional subtle background pattern */}
