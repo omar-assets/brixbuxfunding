@@ -646,8 +646,9 @@ function BrixbuxFundingApp() {
               <h3 className="font-semibold mb-4 text-white">Quick Links</h3>
               <div className="space-y-2 text-white/80">
                 <a href="#lead-form" className="block hover:text-[#5A00E0] transition-colors">Submit Application</a>
-                <a href="https://brixbux.com/iso-partners" className="block hover:text-[#5A00E0] transition-colors">ISO Partners</a>
                 <a href="#case-studies" className="block hover:text-[#5A00E0] transition-colors">Case Studies</a>
+                <a href="#faq" className="block hover:text-[#5A00E0] transition-colors">FAQ</a>
+                <a href="https://brixbux.com" className="block hover:text-[#5A00E0] transition-colors">Main Website</a>
               </div>
               
               <div className="mt-6">

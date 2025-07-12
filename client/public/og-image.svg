@@ -1,0 +1,37 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5A00E0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9F85FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Logo Background -->
+  <rect x="80" y="180" width="120" height="120" rx="20" fill="white" opacity="0.15"/>
+  
+  <!-- Logo -->
+  <rect x="100" y="200" width="80" height="80" rx="12" fill="white"/>
+  <path d="M118 220H142C147.5 220 152 224.5 152 230C152 234.4 149.3 238.1 145.3 239.2C149.0 240.3 152 243.6 152 248C152 253.5 147.5 258 142 258H118V220Z" fill="#5A00E0" stroke="#5A00E0" stroke-width="2"/>
+  <path d="M128 232V242H140C142.2 242 144 240.2 144 238C144 235.8 142.2 234 140 234H128V232Z" fill="white"/>
+  <path d="M128 248V252H141C143.2 252 145 250.2 145 248C145 245.8 143.2 244 141 244H128V248Z" fill="white"/>
+  
+  <!-- Main Text -->
+  <text x="240" y="280" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="white">BRIXBUX</text>
+  <text x="240" y="340" font-family="Arial, sans-serif" font-size="48" font-weight="normal" fill="white" opacity="0.9">Funding</text>
+  
+  <!-- Tagline -->
+  <text x="240" y="420" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="white" opacity="0.8">Fast MCA, Hard-Money & Bridge Loans</text>
+  <text x="240" y="470" font-family="Arial, sans-serif" font-size="28" font-weight="normal" fill="white" opacity="0.7">Get pre-approved in 24 hours • $50K-$20M+</text>
+  
+  <!-- Call to Action -->
+  <rect x="240" y="520" width="280" height="60" rx="30" fill="white" opacity="0.2"/>
+  <text x="380" y="560" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">Apply Now</text>
+  
+  <!-- Decorative Elements -->
+  <circle cx="900" cy="150" r="80" fill="white" opacity="0.05"/>
+  <circle cx="1000" cy="400" r="60" fill="white" opacity="0.05"/>
+  <circle cx="850" cy="500" r="40" fill="white" opacity="0.05"/>
+</svg> 
