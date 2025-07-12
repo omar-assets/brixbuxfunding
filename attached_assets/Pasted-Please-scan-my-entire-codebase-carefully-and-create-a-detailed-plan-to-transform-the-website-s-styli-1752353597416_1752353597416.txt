@@ -1,0 +1,60 @@
+Please scan my entire codebase carefully and create a detailed plan to transform the website’s styling from a tech/SaaS aesthetic to a more professional, high-capital funding firm UI/UX, without changing the core content or functionality.
+
+---
+
+# Objective
+
+I want the website to reflect a professional, authoritative, and finance-oriented aesthetic appropriate for a serious funding company, similar to top private equity or institutional lending brands — NOT a SaaS or tech startup style.  
+
+Keep all existing copy, section structure, and colors (#5A00E0, #6B65FF, #FFFFFF, #9F85FF). The goal is purely a visual and UX transformation.
+
+---
+
+# Expected Plan Before Implementation
+
+Please produce a detailed step-by-step **plan** first (do not make code changes yet), including:
+
+1. **Typography plan**
+   - Recommend the best professional font families (with fallbacks) to replace current fonts.
+   - Define heading weights, body weights, and usage for consistency and elegance.
+
+2. **Color usage strategy**
+   - Propose adjustments to how the existing colors are applied so they feel more professional, with less gradient or neon glow.
+   - Suggest ways to use brand colors in solid or minimal gradient applications.
+
+3. **Layout and spacing strategy**
+   - Propose changes to grid or section spacing to create a more premium, confident feel (e.g., more whitespace, less dense stacking).
+   - Recommend adjustments to button shapes and card edges (e.g., sharper or subtly rounded corners).
+
+4. **Iconography and imagery plan**
+   - Suggest a consistent icon style (line, thin, minimal).
+   - Recommend potential background imagery (e.g., muted cityscapes, abstract finance lines) and how/where to include them.
+
+5. **Micro-interactions and animation plan**
+   - Define any subtle hover effects, transitions, and animation improvements to match a financial firm's seriousness.
+   - Suggest removing or toning down playful or exaggerated animations.
+
+6. **Component style adjustments**
+   - Summarize proposed updates for common components (e.g., CTA buttons, cards, form fields).
+
+---
+
+# Important Constraints
+
+- **Content stays exactly as it is** (headlines, paragraphs, CTAs).
+- **Colors remain the same**, but used in a more elegant, minimal way.
+- Must ensure full responsiveness is maintained.
+- Code changes should be modular and maintainable (e.g., using CSS variables or Tailwind config updates if applicable).
+
+---
+
+# After Plan Approval
+
+Once I review and approve the proposed plan, you can proceed to implement these design changes in the codebase.  
+
+---
+
+# Deliverable
+
+Please return only the detailed transformation plan first, clearly broken down in sections as outlined above. Wait for my explicit approval before starting any code modifications.
+
