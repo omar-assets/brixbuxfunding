@@ -24,7 +24,7 @@ function AnimatedStat({ value, prefix = '', suffix = '', label, delay }: Animate
   return (
     <div ref={ref} className="transform hover:scale-105 transition-transform duration-500 group">
       <div className="relative">
-        <div className="text-4xl font-bold text-[#9F85FF] mb-2 group-hover:text-[#8B5CF6] transition-colors duration-300">
+        <div className="text-4xl font-bold text-[#5A00E0] mb-2 group-hover:text-[#4A00D0] transition-colors duration-300">
           {prefix}
           {inView ? (
             <CountUp
@@ -39,7 +39,7 @@ function AnimatedStat({ value, prefix = '', suffix = '', label, delay }: Animate
           )}
           {suffix}
         </div>
-        <p className="text-white/80 font-semibold text-sm uppercase tracking-wide group-hover:text-white transition-colors duration-300">
+        <p className="text-gray-600 font-semibold text-sm uppercase tracking-wide group-hover:text-gray-900 transition-colors duration-300">
           {label}
         </p>
         <div className="absolute -inset-2 bg-gradient-to-r from-[#9F85FF]/20 to-[#5A00E0]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
@@ -227,9 +227,9 @@ function DirectCapitalApp() {
   };
 
   return (
-    <div className="min-h-screen dark-gradient-bg text-white">
+    <div className="min-h-screen light-gradient-bg text-gray-900">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-black z-50 border-b border-white/10">
+      <nav className="fixed top-0 w-full bg-white z-50 border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
@@ -237,10 +237,10 @@ function DirectCapitalApp() {
               <span className="text-xl font-medium tracking-tight">DirectCapital</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#how-it-works" className="text-white/60 hover:text-white transition-colors text-sm font-medium">How It Works</a>
-              <a href="#case-studies" className="text-white/60 hover:text-white transition-colors text-sm font-medium">Case Studies</a>
-              <a href="#faq" className="text-white/60 hover:text-white transition-colors text-sm font-medium">FAQ</a>
-              <button className="bg-[#5A00E0] hover:bg-[#4A00D0] px-8 py-2.5 rounded font-medium transition-all duration-200 text-sm uppercase tracking-wider">
+              <a href="#how-it-works" className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium">How It Works</a>
+              <a href="#case-studies" className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium">Case Studies</a>
+              <a href="#faq" className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium">FAQ</a>
+              <button className="bg-[#5A00E0] hover:bg-[#4A00D0] px-8 py-2.5 rounded font-medium transition-all duration-200 text-sm uppercase tracking-wider text-white">
                 Get Pre-Approved
               </button>
             </div>
@@ -267,38 +267,38 @@ function DirectCapitalApp() {
               {/* Professional headline badge */}
               <div className="inline-flex items-center px-4 py-2 bg-[#5A00E0]/10 rounded border border-[#5A00E0]/20">
                 <TrendingUp className="h-4 w-4 text-[#5A00E0] mr-2" />
-                <span className="text-xs font-medium text-white/80 tracking-wider uppercase">Direct Funding for ISOs & Developers</span>
+                <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Direct Funding for ISOs & Developers</span>
               </div>
               
               <h1 className="text-5xl lg:text-6xl leading-tight">
-                <span className="block text-white">Fund Deals Fast.</span>
+                <span className="block text-gray-900">Fund Deals Fast.</span>
                 <span className="block text-[#5A00E0] mt-2">Win More.</span>
               </h1>
-              <p className="text-xl lg:text-2xl font-light text-white/80 leading-relaxed mt-6">
+              <p className="text-xl lg:text-2xl font-light text-gray-600 leading-relaxed mt-6">
                 Close bigger deals faster with direct capital.
               </p>
               
               {/* Trust Badges */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8">
-                <div className="text-center p-4 bg-[#1A1A1A] rounded border border-white/10">
-                  <Shield className="h-5 w-5 text-white/60 mx-auto mb-3" />
-                  <p className="text-sm font-medium">$50K-$20M+</p>
-                  <p className="text-xs text-white/40 mt-1">Deal Size</p>
+                <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
+                  <Shield className="h-5 w-5 text-gray-600 mx-auto mb-3" />
+                  <p className="text-sm font-medium text-gray-900">$50K-$20M+</p>
+                  <p className="text-xs text-gray-500 mt-1">Deal Size</p>
                 </div>
-                <div className="text-center p-4 bg-[#1A1A1A] rounded border border-white/10">
-                  <DollarSign className="h-5 w-5 text-white/60 mx-auto mb-3" />
-                  <p className="text-sm font-medium">$200M+</p>
-                  <p className="text-xs text-white/40 mt-1">Funded</p>
+                <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
+                  <DollarSign className="h-5 w-5 text-gray-600 mx-auto mb-3" />
+                  <p className="text-sm font-medium text-gray-900">$200M+</p>
+                  <p className="text-xs text-gray-500 mt-1">Funded</p>
                 </div>
-                <div className="text-center p-4 bg-[#1A1A1A] rounded border border-white/10">
-                  <Clock className="h-5 w-5 text-white/60 mx-auto mb-3" />
-                  <p className="text-sm font-medium">24-Hour</p>
-                  <p className="text-xs text-white/40 mt-1">Terms</p>
+                <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
+                  <Clock className="h-5 w-5 text-gray-600 mx-auto mb-3" />
+                  <p className="text-sm font-medium text-gray-900">24-Hour</p>
+                  <p className="text-xs text-gray-500 mt-1">Terms</p>
                 </div>
-                <div className="text-center p-4 bg-[#1A1A1A] rounded border border-white/10">
-                  <MapPin className="h-5 w-5 text-white/60 mx-auto mb-3" />
-                  <p className="text-sm font-medium">All 50</p>
-                  <p className="text-xs text-white/40 mt-1">States</p>
+                <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
+                  <MapPin className="h-5 w-5 text-gray-600 mx-auto mb-3" />
+                  <p className="text-sm font-medium text-gray-900">All 50</p>
+                  <p className="text-xs text-gray-500 mt-1">States</p>
                 </div>
               </div>
             </div>
@@ -320,12 +320,12 @@ function DirectCapitalApp() {
       </section>
 
       {/* Problem-Agitation-Solution Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto text-center relative">
           <h2 className="text-4xl lg:text-5xl mb-16 leading-tight">
-            <span className="text-white">Slow Funding</span>
+            <span className="text-gray-900">Slow Funding</span>
             <span className="text-red-500 mx-3">Kills</span>
-            <span className="text-white">Deals.</span>
+            <span className="text-gray-900">Deals.</span>
             <br />
             <span className="text-[#5A00E0] mt-4 block">We Fix That.</span>
           </h2>
@@ -333,18 +333,18 @@ function DirectCapitalApp() {
           <div className="grid md:grid-cols-2 gap-12 text-left max-w-4xl mx-auto mb-16">
             <div className="space-y-4">
               <h3 className="text-xl font-medium text-red-500 mb-6 uppercase tracking-wider">The Problem</h3>
-              <p className="text-lg text-white/80 leading-relaxed">Every day, profitable deals slip away.</p>
-              <p className="text-lg text-white/80 leading-relaxed">Traditional lenders take weeks to decide.</p>
-              <p className="text-lg text-white/80 leading-relaxed">Brokers add layers of complexity and delays.</p>
-              <p className="text-lg text-white/80 leading-relaxed">Your clients need capital <span className="font-medium text-white">now</span>, not next month.</p>
+              <p className="text-lg text-gray-700 leading-relaxed">Every day, profitable deals slip away.</p>
+              <p className="text-lg text-gray-700 leading-relaxed">Traditional lenders take weeks to decide.</p>
+              <p className="text-lg text-gray-700 leading-relaxed">Brokers add layers of complexity and delays.</p>
+              <p className="text-lg text-gray-700 leading-relaxed">Your clients need capital <span className="font-medium text-gray-900">now</span>, not next month.</p>
             </div>
             
             <div className="space-y-4">
               <h3 className="text-xl font-medium text-[#5A00E0] mb-6 uppercase tracking-wider">Our Solution</h3>
-              <p className="text-lg text-white/80 leading-relaxed">As a <span className="font-medium text-white">direct funder</span>, we eliminate middlemen.</p>
-              <p className="text-lg text-white/80 leading-relaxed">We make decisions fast.</p>
-              <p className="text-lg text-white/80 leading-relaxed">We fund faster.</p>
-              <p className="text-lg text-white/80 leading-relaxed">We help you close more business.</p>
+              <p className="text-lg text-gray-700 leading-relaxed">As a <span className="font-medium text-gray-900">direct funder</span>, we eliminate middlemen.</p>
+              <p className="text-lg text-gray-700 leading-relaxed">We make decisions fast.</p>
+              <p className="text-lg text-gray-700 leading-relaxed">We fund faster.</p>
+              <p className="text-lg text-gray-700 leading-relaxed">We help you close more business.</p>
             </div>
           </div>
           
@@ -357,7 +357,7 @@ function DirectCapitalApp() {
           
           {/* Scroll Indicator */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            <div className="scroll-indicator flex flex-col items-center text-white/40 hover:text-white/60 transition-colors cursor-pointer">
+            <div className="scroll-indicator flex flex-col items-center text-gray-500 hover:text-gray-700 transition-colors cursor-pointer">
               <span className="text-xs font-medium mb-2 uppercase tracking-wider">See How We Do It</span>
               <ChevronDown className="h-5 w-5" />
             </div>
@@ -366,75 +366,75 @@ function DirectCapitalApp() {
       </section>
 
       {/* USP Section */}
-      <section id="usp" className="py-32 px-4 sm:px-6 lg:px-8 bg-[#0A0A0A] relative">{/* Clean professional background */}
+      <section id="usp" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">{/* Clean professional background */}
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-4xl lg:text-5xl mb-6">
               The Direct Advantage
             </h2>
-            <p className="text-lg text-white/60 font-light uppercase tracking-wider mb-3">Speed. Scale. Simplicity.</p>
-            <p className="text-base text-white/40 max-w-2xl mx-auto">Why ISOs and developers choose us over traditional lenders</p>
+            <p className="text-lg text-gray-600 font-light uppercase tracking-wider mb-3">Speed. Scale. Simplicity.</p>
+            <p className="text-base text-gray-500 max-w-2xl mx-auto">Why ISOs and developers choose us over traditional lenders</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="usp-card p-8 rounded-2xl cursor-pointer group">
               <div className="card-content">
                 <div className="icon-wrapper mb-6">
-                  <Shield className="h-8 w-8 text-white/60" />
+                  <Shield className="h-8 w-8 text-gray-600" />
                 </div>
-                <h3 className="text-xl font-medium mb-4 text-white">Fund Direct</h3>
-                <p className="text-white/60 leading-relaxed font-light">No middlemen, no brokers. We make decisions in-house and fund directly from our own capital.</p>
+                <h3 className="text-xl font-medium mb-4 text-gray-900">Fund Direct</h3>
+                <p className="text-gray-600 leading-relaxed font-light">No middlemen, no brokers. We make decisions in-house and fund directly from our own capital.</p>
               </div>
             </div>
             
             <div className="usp-card p-8 rounded-2xl cursor-pointer group">
               <div className="card-content">
                 <div className="icon-wrapper mb-6">
-                  <Clock className="h-8 w-8 text-white/60" />
+                  <Clock className="h-8 w-8 text-gray-600" />
                 </div>
-                <h3 className="text-xl font-medium mb-4 text-white">Fast Terms</h3>
-                <p className="text-white/60 leading-relaxed font-light">Submit today, get terms tomorrow. Fast decisions mean you never lose a time-sensitive deal.</p>
+                <h3 className="text-xl font-medium mb-4 text-gray-900">Fast Terms</h3>
+                <p className="text-gray-600 leading-relaxed font-light">Submit today, get terms tomorrow. Fast decisions mean you never lose a time-sensitive deal.</p>
               </div>
             </div>
             
             <div className="usp-card p-8 rounded-2xl cursor-pointer group">
               <div className="card-content">
                 <div className="icon-wrapper mb-6">
-                  <DollarSign className="h-8 w-8 text-white/60" />
+                  <DollarSign className="h-8 w-8 text-gray-600" />
                 </div>
-                <h3 className="text-xl font-medium mb-4 text-white">Big Deals</h3>
-                <p className="text-white/60 leading-relaxed font-light">$50K to $20M+ financing capability. We handle deals others can't or won't fund.</p>
+                <h3 className="text-xl font-medium mb-4 text-gray-900">Big Deals</h3>
+                <p className="text-gray-600 leading-relaxed font-light">$50K to $20M+ financing capability. We handle deals others can't or won't fund.</p>
               </div>
             </div>
             
             <div className="usp-card p-8 rounded-2xl cursor-pointer group">
               <div className="card-content">
                 <div className="icon-wrapper mb-6">
-                  <CheckCircle className="h-8 w-8 text-white/60" />
+                  <CheckCircle className="h-8 w-8 text-gray-600" />
                 </div>
-                <h3 className="text-xl font-medium mb-4 text-white">Custom Fit</h3>
-                <p className="text-white/60 leading-relaxed font-light">MCA, bridge loans, hard money, and hybrid structures tailored to your deal's unique needs.</p>
+                <h3 className="text-xl font-medium mb-4 text-gray-900">Custom Fit</h3>
+                <p className="text-gray-600 leading-relaxed font-light">MCA, bridge loans, hard money, and hybrid structures tailored to your deal's unique needs.</p>
               </div>
             </div>
             
             <div className="usp-card p-8 rounded-2xl cursor-pointer group">
               <div className="card-content">
                 <div className="icon-wrapper mb-6">
-                  <Users className="h-8 w-8 text-white/60" />
+                  <Users className="h-8 w-8 text-gray-600" />
                 </div>
-                <h3 className="text-xl font-medium mb-4 text-white">Trusted Partner</h3>
-                <p className="text-white/60 leading-relaxed font-light">We build lasting relationships with ISOs and repeat clients for ongoing deal flow.</p>
+                <h3 className="text-xl font-medium mb-4 text-gray-900">Trusted Partner</h3>
+                <p className="text-gray-600 leading-relaxed font-light">We build lasting relationships with ISOs and repeat clients for ongoing deal flow.</p>
               </div>
             </div>
             
             <div className="usp-card p-8 rounded-2xl cursor-pointer group">
               <div className="card-content">
                 <div className="icon-wrapper mb-6">
-                  <ArrowRight className="h-8 w-8 text-white/60" />
+                  <ArrowRight className="h-8 w-8 text-gray-600" />
                 </div>
-                <h3 className="text-xl font-medium mb-4 text-white">Nationwide</h3>
-                <p className="text-white/60 leading-relaxed font-light">Licensed and operating across all 50 states. Local expertise, national capability.</p>
+                <h3 className="text-xl font-medium mb-4 text-gray-900">Nationwide</h3>
+                <p className="text-gray-600 leading-relaxed font-light">Licensed and operating across all 50 states. Local expertise, national capability.</p>
               </div>
             </div>
           </div>
@@ -449,11 +449,11 @@ function DirectCapitalApp() {
       </section>
 
       {/* Case Studies Section */}
-      <section id="case-studies" className="py-32 px-4 sm:px-6 lg:px-8 bg-black">
+      <section id="case-studies" className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl mb-6">Success Stories</h2>
-            <p className="text-lg text-white/60 font-light">Real deals, real results, real speed</p>
+            <h2 className="text-4xl lg:text-5xl mb-6 text-gray-900">Success Stories</h2>
+            <p className="text-lg text-gray-600 font-light">Real deals, real results, real speed</p>
           </div>
           
           {/* Case Studies Carousel */}
@@ -471,39 +471,39 @@ function DirectCapitalApp() {
                         <div className="case-study-card p-8">
                           <div className="flex items-start space-x-6">
                             <div className="flex-shrink-0">
-                              <div className="w-12 h-12 bg-[#1A1A1A] rounded flex items-center justify-center border border-white/10">
-                                <IconComponent className="h-6 w-6 text-white/60" />
+                              <div className="w-12 h-12 bg-gray-100 rounded flex items-center justify-center border border-gray-200">
+                                <IconComponent className="h-6 w-6 text-gray-600" />
                               </div>
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center space-x-4 mb-4">
                                 <div className="text-2xl font-medium text-[#5A00E0]">{study.amount}</div>
-                                <div className="text-xs text-white/40 uppercase tracking-wider">
+                                <div className="text-xs text-gray-500 uppercase tracking-wider">
                                   {study.type} • {study.location}
                                 </div>
                               </div>
-                              <h3 className="text-xl font-medium mb-4 text-white">
+                              <h3 className="text-xl font-medium mb-4 text-gray-900">
                                 {study.headline}
                               </h3>
-                              <p className="text-white/60 mb-6 leading-relaxed font-light">
+                              <p className="text-gray-600 mb-6 leading-relaxed font-light">
                                 {study.details}
                               </p>
                               <div className="grid md:grid-cols-3 gap-4 text-sm">
                                 <div className="flex items-start space-x-2">
                                   <div className="w-1.5 h-1.5 challenge-indicator rounded-full flex-shrink-0 mt-1.5"></div>
-                                  <span className="text-white/50 text-sm">
+                                  <span className="text-gray-600 text-sm">
                                     <span className="text-red-500 font-medium">Challenge:</span> {study.challenge}
                                   </span>
                                 </div>
                                 <div className="flex items-start space-x-2">
                                   <div className="w-1.5 h-1.5 solution-indicator rounded-full flex-shrink-0 mt-1.5"></div>
-                                  <span className="text-white/50 text-sm">
+                                  <span className="text-gray-600 text-sm">
                                     <span className="text-blue-500 font-medium">Solution:</span> {study.solution}
                                   </span>
                                 </div>
                                 <div className="flex items-start space-x-2">
                                   <div className="w-1.5 h-1.5 outcome-indicator rounded-full flex-shrink-0 mt-1.5"></div>
-                                  <span className="text-white/50 text-sm">
+                                  <span className="text-gray-600 text-sm">
                                     <span className="text-green-500 font-medium">Outcome:</span> {study.outcome}
                                   </span>
                                 </div>
@@ -522,9 +522,9 @@ function DirectCapitalApp() {
             <div className="flex justify-center items-center space-x-6 mt-8">
               <button
                 onClick={prevCaseStudy}
-                className="w-10 h-10 border border-white/20 rounded flex items-center justify-center group hover:border-white/40 transition-all"
+                className="w-10 h-10 border border-gray-300 rounded flex items-center justify-center group hover:border-gray-400 transition-all"
               >
-                <ChevronLeft className="h-4 w-4 text-white/60 group-hover:text-white transition-colors" />
+                <ChevronLeft className="h-4 w-4 text-gray-600 group-hover:text-gray-900 transition-colors" />
               </button>
               
               <div className="flex space-x-2">
@@ -533,7 +533,7 @@ function DirectCapitalApp() {
                     key={index}
                     onClick={() => setCurrentCaseStudy(index)}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentCaseStudy ? 'bg-[#5A00E0]' : 'bg-white/20 hover:bg-white/30'
+                      index === currentCaseStudy ? 'bg-[#5A00E0]' : 'bg-gray-300 hover:bg-gray-400'
                     }`}
                   />
                 ))}
@@ -541,9 +541,9 @@ function DirectCapitalApp() {
               
               <button
                 onClick={nextCaseStudy}
-                className="w-10 h-10 border border-white/20 rounded flex items-center justify-center group hover:border-white/40 transition-all"
+                className="w-10 h-10 border border-gray-300 rounded flex items-center justify-center group hover:border-gray-400 transition-all"
               >
-                <ChevronRight className="h-4 w-4 text-white/60 group-hover:text-white transition-colors" />
+                <ChevronRight className="h-4 w-4 text-gray-600 group-hover:text-gray-900 transition-colors" />
               </button>
             </div>
           </div>
@@ -559,17 +559,17 @@ function DirectCapitalApp() {
                   }`}
                 >
                   <div className="max-w-4xl mx-auto">
-                    <blockquote className="text-xl font-light italic text-white/80 mb-4 leading-relaxed">
+                    <blockquote className="text-xl font-light italic text-gray-700 mb-4 leading-relaxed">
                       "{testimonial.quote}"
                     </blockquote>
                     <div className="flex items-center justify-center space-x-6">
                       <div className="flex items-center space-x-3">
-                        <div className="w-8 h-8 bg-[#1A1A1A] rounded-full flex items-center justify-center border border-white/10">
-                          <span className="text-xs font-medium text-white/60">{testimonial.avatar}</span>
+                        <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center border border-gray-200">
+                          <span className="text-xs font-medium text-gray-600">{testimonial.avatar}</span>
                         </div>
                         <div className="text-left">
-                          <div className="text-white font-medium text-sm">{testimonial.author}</div>
-                          <div className="text-white/50 text-xs">{testimonial.title}, {testimonial.company}</div>
+                          <div className="text-gray-900 font-medium text-sm">{testimonial.author}</div>
+                          <div className="text-gray-600 text-xs">{testimonial.title}, {testimonial.company}</div>
                         </div>
                       </div>
                     </div>
@@ -583,7 +583,7 @@ function DirectCapitalApp() {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial ? 'bg-[#5A00E0]' : 'bg-white/20 hover:bg-white/30'
+                    index === currentTestimonial ? 'bg-[#5A00E0]' : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                 />
               ))}
@@ -593,11 +593,11 @@ function DirectCapitalApp() {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-32 px-4 sm:px-6 lg:px-8 bg-[#0A0A0A]">
+      <section id="how-it-works" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl mb-6">Fast. Simple. Direct.</h2>
-            <p className="text-lg text-white/60 font-light">From application to funding in days, not weeks</p>
+            <h2 className="text-4xl lg:text-5xl mb-6 text-gray-900">Fast. Simple. Direct.</h2>
+            <p className="text-lg text-gray-600 font-light">From application to funding in days, not weeks</p>
           </div>
           
           {/* Process Steps */}
@@ -605,29 +605,29 @@ function DirectCapitalApp() {
             <div className="grid md:grid-cols-3 gap-16 relative">
               {/* Step 1: Submit */}
               <div className="text-center">
-                <div className="w-16 h-16 bg-[#1A1A1A] border border-white/20 rounded flex items-center justify-center mx-auto mb-6">
-                  <span className="text-xl font-medium text-white">1</span>
+                <div className="w-16 h-16 bg-white border border-gray-200 rounded flex items-center justify-center mx-auto mb-6 shadow-sm">
+                  <span className="text-xl font-medium text-gray-900">1</span>
                 </div>
-                <h3 className="text-2xl font-medium mb-3 text-white">Submit</h3>
-                <p className="text-white/60 font-light">Quick form. Zero paperwork upfront.</p>
+                <h3 className="text-2xl font-medium mb-3 text-gray-900">Submit</h3>
+                <p className="text-gray-600 font-light">Quick form. Zero paperwork upfront.</p>
               </div>
               
               {/* Step 2: Approve */}
               <div className="text-center">
-                <div className="w-16 h-16 bg-[#1A1A1A] border border-white/20 rounded flex items-center justify-center mx-auto mb-6">
-                  <span className="text-xl font-medium text-white">2</span>
+                <div className="w-16 h-16 bg-white border border-gray-200 rounded flex items-center justify-center mx-auto mb-6 shadow-sm">
+                  <span className="text-xl font-medium text-gray-900">2</span>
                 </div>
-                <h3 className="text-2xl font-medium mb-3 text-white">Approve</h3>
-                <p className="text-white/60 font-light">Terms in 24 hours. No surprises.</p>
+                <h3 className="text-2xl font-medium mb-3 text-gray-900">Approve</h3>
+                <p className="text-gray-600 font-light">Terms in 24 hours. No surprises.</p>
               </div>
               
               {/* Step 3: Fund */}
               <div className="text-center">
-                <div className="w-16 h-16 bg-[#1A1A1A] border border-white/20 rounded flex items-center justify-center mx-auto mb-6">
-                  <span className="text-xl font-medium text-white">3</span>
+                <div className="w-16 h-16 bg-white border border-gray-200 rounded flex items-center justify-center mx-auto mb-6 shadow-sm">
+                  <span className="text-xl font-medium text-gray-900">3</span>
                 </div>
-                <h3 className="text-2xl font-medium mb-3 text-white">Fund</h3>
-                <p className="text-white/60 font-light">Capital deployed in days.</p>
+                <h3 className="text-2xl font-medium mb-3 text-gray-900">Fund</h3>
+                <p className="text-gray-600 font-light">Capital deployed in days.</p>
               </div>
             </div>
           </div>
@@ -642,35 +642,35 @@ function DirectCapitalApp() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-black">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="text-center">
-              <div className="text-4xl font-medium text-white mb-2">500+</div>
-              <div className="text-sm text-white/50 uppercase tracking-wider">Deals Closed</div>
+              <div className="text-4xl font-medium text-gray-900 mb-2">500+</div>
+              <div className="text-sm text-gray-600 uppercase tracking-wider">Deals Closed</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-medium text-white mb-2">$200M+</div>
-              <div className="text-sm text-white/50 uppercase tracking-wider">Capital Deployed</div>
+              <div className="text-4xl font-medium text-gray-900 mb-2">$200M+</div>
+              <div className="text-sm text-gray-600 uppercase tracking-wider">Capital Deployed</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-medium text-white mb-2">24hrs</div>
-              <div className="text-sm text-white/50 uppercase tracking-wider">Avg. Response</div>
+              <div className="text-4xl font-medium text-gray-900 mb-2">24hrs</div>
+              <div className="text-sm text-gray-600 uppercase tracking-wider">Avg. Response</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-medium text-white mb-2">50</div>
-              <div className="text-sm text-white/50 uppercase tracking-wider">States Licensed</div>
+              <div className="text-4xl font-medium text-gray-900 mb-2">50</div>
+              <div className="text-sm text-gray-600 uppercase tracking-wider">States Licensed</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-32 px-4 sm:px-6 lg:px-8 bg-[#0A0A0A]">
+      <section id="faq" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl mb-6">Frequently Asked Questions</h2>
-            <p className="text-lg text-white/60 font-light">Have questions? We have answers.</p>
+            <h2 className="text-4xl lg:text-5xl mb-6 text-gray-900">Frequently Asked Questions</h2>
+            <p className="text-lg text-gray-600 font-light">Have questions? We have answers.</p>
           </div>
           
           <div className="space-y-4">
@@ -692,17 +692,17 @@ function DirectCapitalApp() {
                 a: "Yes, we specialize in partnering with ISOs. We offer competitive commission structures and fast turnaround times to help you close more deals and build lasting client relationships."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-[#1A1A1A] rounded border border-white/10 hover:border-white/20 transition-all duration-200">
+              <div key={index} className="bg-white rounded border border-gray-200 hover:border-gray-300 transition-all duration-200 shadow-sm">
                 <button
                   onClick={() => toggleFaq(index)}
                   className="w-full p-6 text-left flex justify-between items-center"
                 >
-                  <span className="text-lg font-medium pr-4">{faq.q}</span>
+                  <span className="text-lg font-medium pr-4 text-gray-900">{faq.q}</span>
                   <div className="flex-shrink-0">
                     {expandedFaq === index ? (
-                      <Minus className="h-4 w-4 text-white/60" />
+                      <Minus className="h-4 w-4 text-gray-600" />
                     ) : (
-                      <Plus className="h-4 w-4 text-white/60" />
+                      <Plus className="h-4 w-4 text-gray-600" />
                     )}
                   </div>
                 </button>
@@ -711,8 +711,8 @@ function DirectCapitalApp() {
                     ? 'max-h-96 opacity-100 pb-6' 
                     : 'max-h-0 opacity-0 pb-0'
                 }`}>
-                  <div className="px-6 border-t border-white/10 pt-4">
-                    <p className="text-white/60 leading-relaxed font-light">{faq.a}</p>
+                  <div className="px-6 border-t border-gray-200 pt-4">
+                    <p className="text-gray-600 leading-relaxed font-light">{faq.a}</p>
                   </div>
                 </div>
               </div>
@@ -736,20 +736,20 @@ function DirectCapitalApp() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-black/40 border-t border-white/10">
+      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-800 border-t border-gray-700">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <DollarSign className="h-8 w-8 text-[#9F85FF] float-animation" />
-                <span className="text-xl font-bold">DirectCapital</span>
+                <DollarSign className="h-8 w-8 text-[#5A00E0]" />
+                <span className="text-xl font-bold text-white">DirectCapital</span>
               </div>
-              <p className="text-white/60">Direct funding solutions for large-scale projects and commercial real estate.</p>
+              <p className="text-gray-400">Direct funding solutions for large-scale projects and commercial real estate.</p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <div className="space-y-2 text-white/60">
+              <h4 className="font-semibold mb-4 text-white">Contact</h4>
+              <div className="space-y-2 text-gray-400">
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4" />
                   <span>1-800-FUNDING</span>
@@ -762,8 +762,8 @@ function DirectCapitalApp() {
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <div className="space-y-2 text-white/60">
+              <h4 className="font-semibold mb-4 text-white">Quick Links</h4>
+              <div className="space-y-2 text-gray-400">
                 <a href="#" className="block hover:text-[#5A00E0] transition-colors">Submit Application</a>
                 <a href="#" className="block hover:text-[#5A00E0] transition-colors">ISO Partners</a>
                 <a href="#" className="block hover:text-[#5A00E0] transition-colors">Case Studies</a>
@@ -771,7 +771,7 @@ function DirectCapitalApp() {
             </div>
           </div>
           
-          <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/60">
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
             <p>&copy; 2024 DirectCapital. All rights reserved. Licensed lender in all 50 states.</p>
           </div>
         </div>

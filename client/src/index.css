@@ -49,13 +49,13 @@
 }
 
 /* Professional background and utility classes */
-.dark-gradient-bg {
-  background: #0A0A0A;
+.light-gradient-bg {
+  background: #FAFAFA;
   position: relative;
 }
 
 .subtle-gradient {
-  background: linear-gradient(180deg, #0A0A0A 0%, #111111 100%);
+  background: linear-gradient(180deg, #FAFAFA 0%, #F5F5F5 100%);
 }
 
 .fade-in {
@@ -100,21 +100,21 @@
 
 /* Professional Card Styles */
 .professional-card {
-  background: #1A1A1A;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
   border-radius: 8px;
   transition: all 0.2s ease;
 }
 
 .professional-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: #D1D5DB;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .usp-card {
-  background: #1A1A1A;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
   border-radius: 8px;
   transition: all 0.2s ease;
   position: relative;
@@ -123,8 +123,8 @@
 
 .usp-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: #D1D5DB;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .usp-card .icon-wrapper {
@@ -136,24 +136,24 @@
 }
 
 .usp-section-bg {
-  background: #0A0A0A;
+  background: #F8F9FA;
 }
 /* Professional Case Study Styles */
 .case-study-card {
-  background: #1A1A1A;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
   border-radius: 8px;
   transition: all 0.2s ease;
 }
 
 .case-study-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-color: #D1D5DB;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial-card {
-  background: #1A1A1A;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
   border-radius: 8px;
   transition: all 0.2s ease;
 }
@@ -176,43 +176,43 @@
 
 /* Professional Carousel Navigation */
 .carousel-nav-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
   transition: all 0.2s ease;
 }
 
 .carousel-nav-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #F5F5F5;
+  border-color: #D1D5DB;
 }
 
 /* Professional Progress and Step Styles */
 .progress-line {
-  background: rgba(255, 255, 255, 0.1);
+  background: #E5E5E5;
   height: 2px;
   transition: background 0.3s ease;
 }
 
 .progress-line:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #D1D5DB;
 }
 
 .step-card {
-  background: #1A1A1A;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
   border-radius: 8px;
   transition: all 0.2s ease;
 }
 
 .step-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  border-color: #D1D5DB;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Professional Testimonial Styles */
 .testimonial-avatar {
-  background: #2A2A2A;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #F5F5F5;
+  border: 1px solid #E5E5E5;
   transition: opacity 0.2s ease;
 }
 
@@ -226,35 +226,35 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #FAFAFA;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
+  background: #D1D5DB;
   border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: #9CA3AF;
 }
 
 /* Professional Form Styles */
 .form-input {
-  background: #1A1A1A;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
   border-radius: 4px;
   transition: all 0.2s ease;
 }
 
 .form-input:focus {
-  background: #1A1A1A;
-  border-color: rgba(255, 255, 255, 0.4);
+  background: #FFFFFF;
+  border-color: #5A00E0;
   border-bottom-width: 2px;
   outline: none;
 }
 
 .form-input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: #9CA3AF;
   font-weight: 300;
 }
 

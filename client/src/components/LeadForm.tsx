@@ -72,10 +72,10 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
   };
 
   return (
-    <div className="bg-[#1A1A1A] rounded-lg p-8 border border-white/10">
+    <div className="bg-white rounded-lg p-8 border border-gray-200 shadow-lg">
       <div>
-        <h3 className="text-2xl font-medium mb-2 text-center">Get Your Terms</h3>
-        <p className="text-center text-white/60 mb-6 text-sm font-light">No credit check. No obligation. Just answers.</p>
+        <h3 className="text-2xl font-medium mb-2 text-center text-gray-900">Get Your Terms</h3>
+        <p className="text-center text-gray-600 mb-6 text-sm font-light">No credit check. No obligation. Just answers.</p>
       </div>
       
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -92,10 +92,10 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
             placeholder="Enter your full name"
             value={formData.name}
             onChange={handleInputChange}
-            className="form-input w-full px-4 py-3 rounded text-white placeholder-white/40 bg-[#0A0A0A] border border-white/20 focus:border-white/40 transition-all duration-200"
+            className="form-input w-full px-4 py-3 rounded text-gray-900 placeholder-gray-500 bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200"
             required
           />
-          {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
+          {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
         </div>
         
         <div>
@@ -105,10 +105,10 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
             placeholder="Your best email"
             value={formData.email}
             onChange={handleInputChange}
-            className="form-input w-full px-4 py-3 rounded text-white placeholder-white/40 bg-[#0A0A0A] border border-white/20 focus:border-white/40 transition-all duration-200"
+            className="form-input w-full px-4 py-3 rounded text-gray-900 placeholder-gray-500 bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200"
             required
           />
-          {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
+          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
         </div>
         
         <div>
@@ -118,10 +118,10 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
             placeholder="Direct phone number"
             value={formData.phone}
             onChange={handleInputChange}
-            className="form-input w-full px-4 py-3 rounded text-white placeholder-white/40 bg-[#0A0A0A] border border-white/20 focus:border-white/40 transition-all duration-200"
+            className="form-input w-full px-4 py-3 rounded text-gray-900 placeholder-gray-500 bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200"
             required
           />
-          {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone}</p>}
+          {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
         </div>
         
         <div>
@@ -131,9 +131,9 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
             value={formData.projectDetails}
             onChange={handleInputChange}
             rows={3}
-            className="form-input w-full px-4 py-3 rounded text-white placeholder-white/40 resize-none bg-[#0A0A0A] border border-white/20 focus:border-white/40 transition-all duration-200"
+            className="form-input w-full px-4 py-3 rounded text-gray-900 placeholder-gray-500 resize-none bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200"
           />
-          {errors.projectDetails && <p className="text-red-400 text-sm mt-1">{errors.projectDetails}</p>}
+          {errors.projectDetails && <p className="text-red-500 text-sm mt-1">{errors.projectDetails}</p>}
         </div>
         
         <button
@@ -153,16 +153,16 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
         
         {/* Trust marks below submit button */}
         <div className="flex items-center justify-center space-x-6 pt-3">
-          <div className="flex items-center space-x-2 text-white/50">
-            <Lock className="h-3 w-3 text-white/40" />
+          <div className="flex items-center space-x-2 text-gray-600">
+            <Lock className="h-3 w-3 text-gray-500" />
             <span className="text-xs uppercase tracking-wider">Secure</span>
           </div>
-          <div className="flex items-center space-x-2 text-white/50">
-            <Zap className="h-3 w-3 text-white/40" />
+          <div className="flex items-center space-x-2 text-gray-600">
+            <Zap className="h-3 w-3 text-gray-500" />
             <span className="text-xs uppercase tracking-wider">Instant Terms</span>
           </div>
-          <div className="flex items-center space-x-2 text-white/50">
-            <Shield className="h-3 w-3 text-white/40" />
+          <div className="flex items-center space-x-2 text-gray-600">
+            <Shield className="h-3 w-3 text-gray-500" />
             <span className="text-xs uppercase tracking-wider">No Obligation</span>
           </div>
         </div>
