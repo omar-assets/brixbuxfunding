@@ -8,6 +8,14 @@ This is a full-stack web application built with React frontend and Express backe
 
 Preferred communication style: Simple, everyday language.
 
+### Design Transformation (January 12, 2025)
+The website styling has been transformed from a tech/SaaS aesthetic to a professional, high-capital funding firm design:
+- Typography: Changed from tech-focused fonts to professional serif (Georgia/Playfair Display) for headings and Inter for body text
+- Colors: Moved from purple gradients to minimal palette with primary purple #5A00E0 used sparingly
+- Animations: Removed playful floating shapes, animated gradients, and excessive transitions
+- Layout: Cleaner, more authoritative design with increased spacing and reduced visual noise
+- Components: All buttons, cards, and forms now use professional styling with subtle borders instead of gradients
+
 ## System Architecture
 
 ### Frontend Architecture
