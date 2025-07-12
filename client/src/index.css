@@ -258,14 +258,126 @@
   font-weight: 300;
 }
 
-/* Intersection Observer animations */
+/* Custom CSS for BRIXBUX Funding */
+
+/* Light gradient background */
+.light-gradient-bg {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Logo animations */
+.logo-image {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  transform: scale(1.05);
+}
+
+/* Pulse animation for CTA buttons */
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 20px rgba(90, 0, 224, 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(90, 0, 224, 0.5);
+  }
+}
+
+/* Scroll indicator animation */
+.scroll-indicator {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Case study card styling */
+.case-study-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.case-study-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Trust badge indicators */
+.challenge-indicator {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.solution-indicator {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.outcome-indicator {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+/* Animation for elements on scroll */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease-out;
+  transition: all 0.8s ease;
 }
 
 .animate-on-scroll.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Responsive logo adjustments */
+@media (max-width: 640px) {
+  .logo-image {
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  }
+}
+
+/* Focus states for accessibility */
+.logo-image:focus {
+  outline: 2px solid #5A00E0;
+  outline-offset: 2px;
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .logo-image {
+    filter: contrast(1.2);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .logo-image {
+    transition: none;
+  }
+  
+  .logo-image:hover {
+    transform: none;
+  }
+  
+  .pulse-glow {
+    animation: none;
+  }
+  
+  .scroll-indicator {
+    animation: none;
+  }
 }

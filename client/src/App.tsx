@@ -5,6 +5,7 @@ import { queryClient } from '@/lib/queryClient';
 import LeadForm from '@/components/LeadForm';
 import MinimalNav from '@/components/MinimalNav';
 import { FeaturesSectionWithHoverEffects } from '@/components/ui/feature-section-with-hover-effects';
+import Logo from '@/components/ui/Logo';
 
 // Animated Stats Component
 
@@ -194,7 +195,7 @@ function BrixbuxFundingApp() {
       <MinimalNav />
       <main>
         {/* Hero Section */}
-        <section aria-labelledby="hero-heading" className="pt-40 pb-32 px-4 sm:px-6 lg:px-8">
+        <section aria-labelledby="hero-heading" className="pt-44 pb-32 px-4 sm:px-6 lg:px-8">
         {/* Professional subtle background pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -621,9 +622,8 @@ function BrixbuxFundingApp() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <DollarSign className="h-8 w-8 text-[#5A00E0]" />
-                <span className="text-xl font-bold text-white">BRIXBUX Funding</span>
+              <div className="mb-4">
+                <Logo variant="light-transparent" size="md" />
               </div>
               <p className="text-white/80">Direct funding solutions for fast-growing businesses.</p>
             </div>

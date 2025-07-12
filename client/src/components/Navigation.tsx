@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { DollarSign, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Logo from './ui/Logo';
 
 interface NavigationProps {
   onGetPreApproved?: () => void;
@@ -48,12 +49,13 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 lg:py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-8 h-8 bg-[#5A00E0] rounded-md">
-              <DollarSign className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-xl font-semibold tracking-tight text-gray-900">BRIXBUX Funding</span>
-          </div>
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center"
+            aria-label="Scroll to top"
+          >
+            <Logo variant="dark" size="xl" showText={false} />
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
