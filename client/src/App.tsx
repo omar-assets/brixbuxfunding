@@ -247,7 +247,6 @@ function DirectCapitalApp() {
           </div>
         </div>
       </nav>
-
       {/* Hero Section */}
       <section className="pt-40 pb-32 px-4 sm:px-6 lg:px-8">
         {/* Professional subtle background pattern */}
@@ -318,7 +317,6 @@ function DirectCapitalApp() {
           </div>
         </div>
       </section>
-
       {/* Problem-Agitation-Solution Section */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto text-center relative">
@@ -364,7 +362,6 @@ function DirectCapitalApp() {
           </div>
         </div>
       </section>
-
       {/* USP Section */}
       <section id="usp" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">{/* Clean professional background */}
         
@@ -447,7 +444,6 @@ function DirectCapitalApp() {
           </div>
         </div>
       </section>
-
       {/* Case Studies Section */}
       <section id="case-studies" className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -591,7 +587,6 @@ function DirectCapitalApp() {
           </div>
         </div>
       </section>
-
       {/* How It Works Section */}
       <section id="how-it-works" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
@@ -640,7 +635,6 @@ function DirectCapitalApp() {
           </div>
         </div>
       </section>
-
       {/* Stats Section */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -664,7 +658,6 @@ function DirectCapitalApp() {
           </div>
         </div>
       </section>
-
       {/* FAQ Section */}
       <section id="faq" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
@@ -720,11 +713,10 @@ function DirectCapitalApp() {
           </div>
         </div>
       </section>
-
       {/* Final CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#5A00E0] to-[#9F85FF] animate-on-scroll">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8">Don't Let Your Next Big Deal Slip Away</h2>
+          <h2 className="text-4xl font-bold mb-8 text-[#ffffff]">Don't Let Your Next Big Deal Slip Away</h2>
           <p className="text-xl mb-12 text-white/90">
             Every minute you wait is another minute your competition gets ahead. 
             Get pre-approved now and be ready to close when opportunity strikes.
@@ -734,7 +726,6 @@ function DirectCapitalApp() {
           </button>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-800 border-t border-gray-700">
         <div className="max-w-7xl mx-auto">
