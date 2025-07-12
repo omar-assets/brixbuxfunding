@@ -577,14 +577,15 @@ function DirectCapitalApp() {
           
           {/* Process Flow with Visual Connectors */}
           <div className="relative">
-            {/* Progress Line */}
-            <div className="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-[#9F85FF] via-[#6B65FF] to-[#5A00E0] opacity-30"></div>
-            <div className="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-[#9F85FF] via-[#6B65FF] to-[#5A00E0] opacity-60 progress-line"></div>
+            {/* Progress Line Background */}
+            <div className="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-white/10 rounded-full"></div>
+            {/* Animated Progress Line */}
+            <div className="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-[#9F85FF] via-[#6B65FF] to-[#5A00E0] rounded-full progress-line"></div>
             
             <div className="grid md:grid-cols-3 gap-8 relative">
               {/* Step 1: Submit */}
               <div className="text-center group relative">
-                <div className="relative z-10 w-20 h-20 bg-gradient-to-br from-[#9F85FF] to-[#6B65FF] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#9F85FF]/50 transition-all duration-300 cursor-pointer step-glow">
+                <div className="relative z-10 w-20 h-20 bg-gradient-to-br from-[#9F85FF] to-[#6B65FF] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#9F85FF]/50 transition-all duration-300 cursor-pointer step-glow step-pulse">
                   <span className="text-2xl font-bold text-white">1</span>
                   <div className="absolute inset-0 bg-gradient-to-br from-[#9F85FF] to-[#6B65FF] rounded-full opacity-0 group-hover:opacity-20 group-hover:animate-ping transition-opacity duration-300"></div>
                 </div>
@@ -594,7 +595,7 @@ function DirectCapitalApp() {
               
               {/* Step 2: Approve */}
               <div className="text-center group relative">
-                <div className="relative z-10 w-20 h-20 bg-gradient-to-br from-[#6B65FF] to-[#5A00E0] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6B65FF]/50 transition-all duration-300 cursor-pointer step-glow">
+                <div className="relative z-10 w-20 h-20 bg-gradient-to-br from-[#6B65FF] to-[#5A00E0] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6B65FF]/50 transition-all duration-300 cursor-pointer step-glow step-pulse" style={{animationDelay: '1s'}}>
                   <span className="text-2xl font-bold text-white">2</span>
                   <div className="absolute inset-0 bg-gradient-to-br from-[#6B65FF] to-[#5A00E0] rounded-full opacity-0 group-hover:opacity-20 group-hover:animate-ping transition-opacity duration-300"></div>
                 </div>
@@ -604,7 +605,7 @@ function DirectCapitalApp() {
               
               {/* Step 3: Fund */}
               <div className="text-center group relative">
-                <div className="relative z-10 w-20 h-20 bg-gradient-to-br from-[#5A00E0] to-[#9F85FF] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#5A00E0]/50 transition-all duration-300 cursor-pointer step-glow">
+                <div className="relative z-10 w-20 h-20 bg-gradient-to-br from-[#5A00E0] to-[#9F85FF] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#5A00E0]/50 transition-all duration-300 cursor-pointer step-glow step-pulse" style={{animationDelay: '2s'}}>
                   <span className="text-2xl font-bold text-white">3</span>
                   <div className="absolute inset-0 bg-gradient-to-br from-[#5A00E0] to-[#9F85FF] rounded-full opacity-0 group-hover:opacity-20 group-hover:animate-ping transition-opacity duration-300"></div>
                 </div>
