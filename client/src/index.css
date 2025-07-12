@@ -323,7 +323,72 @@
   background: rgba(159, 133, 255, 0.2);
   border-color: rgba(159, 133, 255, 0.4);
   box-shadow: 0 10px 30px rgba(159, 133, 255, 0.2);
-  transform: translateY(-2px);
+}
+
+/* Enhanced How It Works Section */
+.progress-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: progressFlow 3s linear infinite;
+}
+
+@keyframes progressFlow {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.step-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.step-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(159, 133, 255, 0.3),
+    transparent,
+    rgba(107, 101, 255, 0.3),
+    transparent,
+    rgba(90, 0, 224, 0.3),
+    transparent
+  );
+  animation: stepRotate 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.step-glow:hover::before {
+  opacity: 1;
+}
+
+@keyframes stepRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .carousel-nav-btn:active {

@@ -570,40 +570,54 @@ function DirectCapitalApp() {
       {/* How It Works Section */}
       <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 animate-on-scroll">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <h2 className="text-4xl font-bold mb-6">Fast. Simple. Direct.</h2>
             <p className="text-xl text-white/80">From application to funding in days, not weeks</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-[#9F85FF] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 pulse-glow">
-                <span className="text-2xl font-bold">1</span>
-              </div>
-              <h3 className="text-2xl font-semibold mb-4">Submit Your Deal</h3>
-              <p className="text-white/80 text-lg">Brief form, no heavy paperwork upfront. Tell us about your project and funding needs.</p>
-            </div>
+          {/* Process Flow with Visual Connectors */}
+          <div className="relative">
+            {/* Progress Line */}
+            <div className="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-[#9F85FF] via-[#6B65FF] to-[#5A00E0] opacity-30"></div>
+            <div className="hidden md:block absolute top-16 left-1/2 transform -translate-x-1/2 w-3/4 h-0.5 bg-gradient-to-r from-[#9F85FF] via-[#6B65FF] to-[#5A00E0] opacity-60 progress-line"></div>
             
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-[#9F85FF] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 pulse-glow">
-                <span className="text-2xl font-bold">2</span>
+            <div className="grid md:grid-cols-3 gap-8 relative">
+              {/* Step 1: Submit */}
+              <div className="text-center group relative">
+                <div className="relative z-10 w-20 h-20 bg-gradient-to-br from-[#9F85FF] to-[#6B65FF] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#9F85FF]/50 transition-all duration-300 cursor-pointer step-glow">
+                  <span className="text-2xl font-bold text-white">1</span>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#9F85FF] to-[#6B65FF] rounded-full opacity-0 group-hover:opacity-20 group-hover:animate-ping transition-opacity duration-300"></div>
+                </div>
+                <h3 className="text-3xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] to-[#9F85FF] group-hover:from-[#9F85FF] group-hover:to-[#6B65FF] transition-all duration-300">Submit</h3>
+                <p className="text-white/80 text-lg font-medium">Quick form. Zero paperwork upfront.</p>
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Get Terms</h3>
-              <p className="text-white/80 text-lg">Tailored offer within 24 hours. Clear terms, competitive rates, no surprises.</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-[#9F85FF] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 pulse-glow">
-                <span className="text-2xl font-bold">3</span>
+              
+              {/* Step 2: Approve */}
+              <div className="text-center group relative">
+                <div className="relative z-10 w-20 h-20 bg-gradient-to-br from-[#6B65FF] to-[#5A00E0] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#6B65FF]/50 transition-all duration-300 cursor-pointer step-glow">
+                  <span className="text-2xl font-bold text-white">2</span>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#6B65FF] to-[#5A00E0] rounded-full opacity-0 group-hover:opacity-20 group-hover:animate-ping transition-opacity duration-300"></div>
+                </div>
+                <h3 className="text-3xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] to-[#6B65FF] group-hover:from-[#6B65FF] group-hover:to-[#5A00E0] transition-all duration-300">Approve</h3>
+                <p className="text-white/80 text-lg font-medium">Terms in 24 hours. No surprises.</p>
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Get Funded</h3>
-              <p className="text-white/80 text-lg">Close and deploy capital in days. Fast execution when timing matters most.</p>
+              
+              {/* Step 3: Fund */}
+              <div className="text-center group relative">
+                <div className="relative z-10 w-20 h-20 bg-gradient-to-br from-[#5A00E0] to-[#9F85FF] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-[#5A00E0]/50 transition-all duration-300 cursor-pointer step-glow">
+                  <span className="text-2xl font-bold text-white">3</span>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#5A00E0] to-[#9F85FF] rounded-full opacity-0 group-hover:opacity-20 group-hover:animate-ping transition-opacity duration-300"></div>
+                </div>
+                <h3 className="text-3xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] to-[#5A00E0] group-hover:from-[#5A00E0] group-hover:to-[#9F85FF] transition-all duration-300">Fund</h3>
+                <p className="text-white/80 text-lg font-medium">Capital deployed in days.</p>
+              </div>
             </div>
           </div>
           
-          <div className="text-center mt-12">
-            <button className="bg-[#9F85FF] hover:bg-[#8B5CF6] text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl pulse-glow">
+          <div className="text-center mt-16">
+            <button className="bg-gradient-to-r from-[#9F85FF] to-[#5A00E0] hover:from-[#8B5CF6] hover:to-[#6B65FF] text-white px-10 py-5 rounded-full text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-[#9F85FF]/50 pulse-glow group">
               Start Now — Get Pre-Approved
+              <ArrowRight className="inline-block ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
           </div>
         </div>
