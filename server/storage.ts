@@ -1,4 +1,4 @@
-import { users, leadSubmissions, type User, type InsertUser, type LeadSubmission, type InsertLeadSubmission } from "@shared/schema";
+import { type User, type InsertUser, type LeadSubmission, type InsertLeadSubmission } from "@shared/schema";
 
 // modify the interface with any CRUD methods
 // you might need
@@ -46,7 +46,8 @@ export class MemStorage implements IStorage {
     const leadSubmission: LeadSubmission = { 
       ...insertLeadSubmission, 
       id, 
-      submittedAt: new Date() 
+      submittedAt: new Date(),
+      projectDetails: insertLeadSubmission.projectDetails ?? null
     };
     this.leadSubmissions.set(id, leadSubmission);
     return leadSubmission;

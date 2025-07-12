@@ -33,7 +33,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Get all lead submissions (for admin purposes)
-  app.get("/api/leads", async (req, res) => {
+  app.get("/api/leads", async (_req, res) => {
     try {
       const leads = await storage.getLeadSubmissions();
       res.json(leads);

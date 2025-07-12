@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { DollarSign, Menu, X, ChevronDown } from 'lucide-react';
+import { DollarSign, Menu, X } from 'lucide-react';
 
 interface NavigationProps {
   onGetPreApproved?: () => void;
@@ -62,14 +62,14 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
               className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium relative group py-2"
             >
               How It Works
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5A00E0] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5A00E0] transition-all duration-300 group-hover:w-full" />
             </button>
             <button
               onClick={() => handleNavClick('#case-studies')}
               className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-medium relative group py-2"
             >
               Case Studies
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5A00E0] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5A00E0] transition-all duration-300 group-hover:w-full" />
             </button>
             <button
               onClick={() => handleNavClick('#faq')}
@@ -77,7 +77,7 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
             >
               FAQ
             </button>
-            <div className="h-6 w-px bg-gray-300"></div>
+            <div className="h-6 w-px bg-gray-300" />
             <button
               onClick={handleGetPreApproved}
               className="bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-6 py-2.5 rounded-md font-medium transition-all duration-200 text-sm uppercase tracking-wider shadow-sm hover:shadow-md"

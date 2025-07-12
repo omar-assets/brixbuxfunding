@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brixbuxfunding.com/sitemap.xml 

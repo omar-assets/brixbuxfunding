@@ -13,7 +13,7 @@ export default function MinimalNav() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+    <nav role="navigation" aria-label="Main navigation" className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white/80 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,7 +62,7 @@ export default function MinimalNav() {
               className="hidden lg:inline-block text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-200 relative group"
             >
               Back to Main Site
-              <span className="absolute -bottom-0.5 left-0 w-full h-px bg-gray-900 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100"></span>
+              <span className="absolute -bottom-0.5 left-0 w-full h-px bg-gray-900 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
             </a>
 
             {/* Mobile Button */}

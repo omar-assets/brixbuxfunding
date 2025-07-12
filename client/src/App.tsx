@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ChevronDown, DollarSign, Clock, Users, Shield, ArrowRight, CheckCircle, Star, Phone, Mail, MapPin, TrendingUp, Building, Utensils, Warehouse, ChevronLeft, ChevronRight, Plus, Minus, Upload, FileCheck, Banknote } from 'lucide-react';
-import { useInView } from 'react-intersection-observer';
-import CountUp from 'react-countup';
+import { ChevronDown, DollarSign, Clock, Shield, ArrowRight, CheckCircle, Phone, Mail, MapPin, TrendingUp, Building, Utensils, Warehouse, ChevronLeft, ChevronRight, Plus, Minus, Upload, FileCheck, Banknote } from 'lucide-react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '@/lib/queryClient';
 import LeadForm from '@/components/LeadForm';
@@ -9,46 +7,7 @@ import MinimalNav from '@/components/MinimalNav';
 import { FeaturesSectionWithHoverEffects } from '@/components/ui/feature-section-with-hover-effects';
 
 // Animated Stats Component
-interface AnimatedStatProps {
-  value: number;
-  prefix?: string;
-  suffix?: string;
-  label: string;
-  delay: number;
-}
 
-function AnimatedStat({ value, prefix = '', suffix = '', label, delay }: AnimatedStatProps) {
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-    triggerOnce: true
-  });
-
-  return (
-    <div ref={ref} className="transform hover:scale-105 transition-transform duration-500 group">
-      <div className="relative">
-        <div className="text-4xl font-bold text-[#5A00E0] mb-2 group-hover:text-[#4A00D0] transition-colors duration-300">
-          {prefix}
-          {inView ? (
-            <CountUp
-              start={0}
-              end={value}
-              duration={2}
-              delay={delay / 1000}
-              preserveValue={true}
-            />
-          ) : (
-            0
-          )}
-          {suffix}
-        </div>
-        <p className="text-gray-600 font-semibold text-sm uppercase tracking-wide group-hover:text-gray-900 transition-colors duration-300">
-          {label}
-        </p>
-        <div className="absolute -inset-2 bg-gradient-to-r from-[#9F85FF]/20 to-[#5A00E0]/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-      </div>
-    </div>
-  );
-}
 
 function BrixbuxFundingApp() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -228,18 +187,14 @@ function BrixbuxFundingApp() {
     }, 5000);
   };
 
-  const handleGetPreApproved = () => {
-    const formElement = document.querySelector('#lead-form');
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+
 
   return (
     <div className="min-h-screen light-gradient-bg text-gray-900">
       <MinimalNav />
-      {/* Hero Section */}
-      <section className="pt-40 pb-32 px-4 sm:px-6 lg:px-8">
+      <main>
+        {/* Hero Section */}
+        <section aria-labelledby="hero-heading" className="pt-40 pb-32 px-4 sm:px-6 lg:px-8">
         {/* Professional subtle background pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -248,7 +203,7 @@ function BrixbuxFundingApp() {
               linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
             `,
             backgroundSize: '100px 100px'
-          }}></div>
+          }} />
         </div>
         
         <div className="max-w-7xl mx-auto">
@@ -260,7 +215,7 @@ function BrixbuxFundingApp() {
                 <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Fast MCA, Hard-Money & Bridge Loans for ISOs</span>
               </div>
               
-              <h1 className="text-5xl lg:text-6xl leading-tight">
+              <h1 id="hero-heading" className="text-5xl lg:text-6xl leading-tight">
                 <span className="block text-gray-900">Fund Deals Fast.</span>
                 <span className="block text-[#5A00E0] mt-2">Win More.</span>
               </h1>
@@ -308,10 +263,10 @@ function BrixbuxFundingApp() {
           </div>
         </div>
       </section>
-      {/* Problem-Agitation-Solution Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
+        {/* Problem-Agitation-Solution Section */}
+        <section aria-labelledby="problem-solution-heading" className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto text-center relative">
-          <h2 className="text-4xl lg:text-5xl mb-16 leading-tight">
+          <h2 id="problem-solution-heading" className="text-4xl lg:text-5xl mb-16 leading-tight">
             <span className="text-gray-900">Slow Funding</span>
             <span className="text-red-500 mx-3">Kills</span>
             <span className="text-gray-900">Deals.</span>
@@ -353,11 +308,11 @@ function BrixbuxFundingApp() {
           </div>
         </div>
       </section>
-      {/* USP Section */}
-      <section id="usp" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">
+        {/* USP Section */}
+        <section id="usp" aria-labelledby="usp-heading" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl mb-6">
+            <h2 id="usp-heading" className="text-4xl lg:text-5xl mb-6">
               The Direct Advantage
             </h2>
             <p className="text-lg text-gray-600 font-light uppercase tracking-wider mb-3">Speed. Scale. Simplicity.</p>
@@ -374,11 +329,11 @@ function BrixbuxFundingApp() {
           </div>
         </div>
       </section>
-      {/* Case Studies Section */}
-      <section id="case-studies" className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
+        {/* Case Studies Section */}
+        <section id="case-studies" aria-labelledby="case-studies-heading" className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl mb-6 text-gray-900">Success Stories</h2>
+            <h2 id="case-studies-heading" className="text-4xl lg:text-5xl mb-6 text-gray-900">Success Stories</h2>
             <p className="text-lg text-gray-600 font-light">Real deals, real results, real speed</p>
           </div>
           
@@ -416,19 +371,19 @@ function BrixbuxFundingApp() {
                               </p>
                               <div className="grid md:grid-cols-3 gap-4 text-sm">
                                 <div className="flex items-start space-x-2">
-                                  <div className="w-1.5 h-1.5 challenge-indicator rounded-full flex-shrink-0 mt-1.5"></div>
+                                  <div className="w-1.5 h-1.5 challenge-indicator rounded-full flex-shrink-0 mt-1.5" />
                                   <span className="text-gray-600 text-sm">
                                     <span className="text-red-500 font-medium">Challenge:</span> {study.challenge}
                                   </span>
                                 </div>
                                 <div className="flex items-start space-x-2">
-                                  <div className="w-1.5 h-1.5 solution-indicator rounded-full flex-shrink-0 mt-1.5"></div>
+                                  <div className="w-1.5 h-1.5 solution-indicator rounded-full flex-shrink-0 mt-1.5" />
                                   <span className="text-gray-600 text-sm">
                                     <span className="text-blue-500 font-medium">Solution:</span> {study.solution}
                                   </span>
                                 </div>
                                 <div className="flex items-start space-x-2">
-                                  <div className="w-1.5 h-1.5 outcome-indicator rounded-full flex-shrink-0 mt-1.5"></div>
+                                  <div className="w-1.5 h-1.5 outcome-indicator rounded-full flex-shrink-0 mt-1.5" />
                                   <span className="text-gray-600 text-sm">
                                     <span className="text-green-500 font-medium">Outcome:</span> {study.outcome}
                                   </span>
@@ -448,6 +403,7 @@ function BrixbuxFundingApp() {
             <div className="flex justify-center items-center space-x-6 mt-8">
               <button
                 onClick={prevCaseStudy}
+                aria-label="Previous case study"
                 className="w-10 h-10 border border-gray-300 rounded flex items-center justify-center group hover:border-gray-400 transition-all"
               >
                 <ChevronLeft className="h-4 w-4 text-gray-600 group-hover:text-gray-900 transition-colors" />
@@ -458,6 +414,7 @@ function BrixbuxFundingApp() {
                   <button
                     key={index}
                     onClick={() => setCurrentCaseStudy(index)}
+                    aria-label={`Go to case study ${index + 1}`}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       index === currentCaseStudy ? 'bg-[#5A00E0]' : 'bg-gray-300 hover:bg-gray-400'
                     }`}
@@ -467,6 +424,7 @@ function BrixbuxFundingApp() {
               
               <button
                 onClick={nextCaseStudy}
+                aria-label="Next case study"
                 className="w-10 h-10 border border-gray-300 rounded flex items-center justify-center group hover:border-gray-400 transition-all"
               >
                 <ChevronRight className="h-4 w-4 text-gray-600 group-hover:text-gray-900 transition-colors" />
@@ -508,6 +466,7 @@ function BrixbuxFundingApp() {
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
+                  aria-label={`Go to testimonial ${index + 1}`}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     index === currentTestimonial ? 'bg-[#5A00E0]' : 'bg-gray-300 hover:bg-gray-400'
                   }`}
@@ -517,11 +476,11 @@ function BrixbuxFundingApp() {
           </div>
         </div>
       </section>
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        {/* How It Works Section */}
+        <section id="how-it-works" aria-labelledby="how-it-works-heading" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl mb-6 text-gray-900">Fast. Simple. Direct.</h2>
+            <h2 id="how-it-works-heading" className="text-4xl lg:text-5xl mb-6 text-gray-900">Fast. Simple. Direct.</h2>
             <p className="text-lg text-gray-600 font-light">From application to funding in days, not weeks</p>
           </div>
           
@@ -565,8 +524,8 @@ function BrixbuxFundingApp() {
           </div>
         </div>
       </section>
-      {/* Stats Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
+        {/* Stats Section */}
+        <section aria-label="Company Statistics" className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="text-center">
@@ -588,11 +547,11 @@ function BrixbuxFundingApp() {
           </div>
         </div>
       </section>
-      {/* FAQ Section */}
-      <section id="faq" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        {/* FAQ Section */}
+        <section id="faq" aria-labelledby="faq-heading" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl mb-6 text-gray-900">Frequently Asked Questions</h2>
+            <h2 id="faq-heading" className="text-4xl lg:text-5xl mb-6 text-gray-900">Frequently Asked Questions</h2>
             <p className="text-lg text-gray-600 font-light">Have questions? We have answers.</p>
           </div>
           
@@ -643,10 +602,10 @@ function BrixbuxFundingApp() {
           </div>
         </div>
       </section>
-      {/* Final CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#5A00E0] to-[#9F85FF] animate-on-scroll">
+        {/* Final CTA Section */}
+        <section aria-labelledby="final-cta-heading" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#5A00E0] to-[#9F85FF] animate-on-scroll">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8 text-[#ffffff]">Don't Let Your Next Big Deal Slip Away</h2>
+          <h2 id="final-cta-heading" className="text-4xl font-bold mb-8 text-[#ffffff]">Don't Let Your Next Big Deal Slip Away</h2>
           <p className="text-xl mb-12 text-white/90">
             Every minute you wait is another minute your competition gets ahead. 
             Get pre-approved now and be ready to close when opportunity strikes.
@@ -656,8 +615,9 @@ function BrixbuxFundingApp() {
           </button>
         </div>
       </section>
+      </main>
       {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-800 border-t border-gray-700">
+      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-[#1B133E] border-t border-[#5A00E0]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -665,12 +625,12 @@ function BrixbuxFundingApp() {
                 <DollarSign className="h-8 w-8 text-[#5A00E0]" />
                 <span className="text-xl font-bold text-white">BRIXBUX Funding</span>
               </div>
-              <p className="text-gray-400">Fast MCA, Hard-Money & Bridge Loans for ISOs. Direct funding solutions for large-scale projects and commercial real estate.</p>
+              <p className="text-white/80">Direct funding solutions for fast-growing businesses.</p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4 text-white">Contact</h4>
-              <div className="space-y-2 text-gray-400">
+              <h3 className="font-semibold mb-4 text-white">Contact</h3>
+              <div className="space-y-2 text-white/80">
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4" />
                   <span>1-800-FUNDING</span>
@@ -683,16 +643,32 @@ function BrixbuxFundingApp() {
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4 text-white">Quick Links</h4>
-              <div className="space-y-2 text-gray-400">
-                <a href="#" className="block hover:text-[#5A00E0] transition-colors">Submit Application</a>
-                <a href="#" className="block hover:text-[#5A00E0] transition-colors">ISO Partners</a>
-                <a href="#" className="block hover:text-[#5A00E0] transition-colors">Case Studies</a>
+              <h3 className="font-semibold mb-4 text-white">Quick Links</h3>
+              <div className="space-y-2 text-white/80">
+                <a href="#lead-form" className="block hover:text-[#5A00E0] transition-colors">Submit Application</a>
+                <a href="https://brixbux.com/iso-partners" className="block hover:text-[#5A00E0] transition-colors">ISO Partners</a>
+                <a href="#case-studies" className="block hover:text-[#5A00E0] transition-colors">Case Studies</a>
+              </div>
+              
+              <div className="mt-6">
+                <h3 className="font-semibold mb-3 text-white">Follow Us</h3>
+                <div className="flex space-x-3">
+                  <a href="https://www.linkedin.com/company/brixbux" aria-label="Visit BRIXBUX on LinkedIn" className="text-white/80 hover:text-[#5A00E0] transition-colors">
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                  <a href="https://twitter.com/brixbux" aria-label="Visit BRIXBUX on Twitter" className="text-white/80 hover:text-[#5A00E0] transition-colors">
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/80">
             <p>&copy; 2024 BRIXBUX Funding. All rights reserved. Licensed lender in all 50 states.</p>
           </div>
         </div>

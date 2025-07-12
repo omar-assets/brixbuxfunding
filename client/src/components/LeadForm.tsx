@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { ArrowRight, Lock, Zap, Shield } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
@@ -9,6 +9,26 @@ interface LeadFormProps {
   onSuccess?: () => void;
 }
 
+// Define proper window interface for analytics
+interface WindowWithAnalytics extends Window {
+  gtag?: (...args: unknown[]) => void;
+  fbq?: (...args: unknown[]) => void;
+}
+
+declare const window: WindowWithAnalytics;
+
+// Helper function to capture UTM parameters
+const getUTMParams = () => {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get('utm_source') ?? '',
+    utm_medium: params.get('utm_medium') ?? '',
+    utm_campaign: params.get('utm_campaign') ?? '',
+    utm_term: params.get('utm_term') ?? '',
+    utm_content: params.get('utm_content') ?? '',
+  };
+};
+
 export default function LeadForm({ onSuccess }: LeadFormProps) {
   const [formData, setFormData] = useState<InsertLeadSubmission>({
     name: '',
@@ -17,6 +37,12 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
     projectDetails: ''
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [utmParams, setUtmParams] = useState(getUTMParams());
+
+  // Capture UTM parameters on component mount
+  useEffect(() => {
+    setUtmParams(getUTMParams());
+  }, []);
 
   const submitLeadMutation = useMutation({
     mutationFn: async (data: InsertLeadSubmission) => {
@@ -26,11 +52,48 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
       });
     },
     onSuccess: () => {
+      // Fire analytics events on successful submission
+      const projectDetails = formData.projectDetails || '';
+      const eventData = {
+        event: 'apply_form_submit',
+        form_type: 'lead_generation',
+        // Extract deal type from project details if available
+        deal_type: projectDetails.toLowerCase().includes('mca') ? 'mca' :
+                  projectDetails.toLowerCase().includes('bridge') ? 'bridge' :
+                  projectDetails.toLowerCase().includes('hard') ? 'hard_money' : 'other',
+        // Include UTM parameters (no PII)
+        utm_source: utmParams.utm_source || '',
+        utm_medium: utmParams.utm_medium || '',
+        utm_campaign: utmParams.utm_campaign || '',
+        utm_term: utmParams.utm_term || '',
+        utm_content: utmParams.utm_content || '',
+      };
+
+      // Google Analytics 4 event
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'apply_form_submit', {
+          event_category: 'Lead Generation',
+          event_label: eventData.deal_type,
+          custom_parameter_1: eventData.utm_source,
+          custom_parameter_2: eventData.utm_medium,
+          custom_parameter_3: eventData.utm_campaign,
+        });
+      }
+
+      // Facebook Pixel event
+      if (typeof window !== 'undefined' && window.fbq) {
+        window.fbq('track', 'Lead', {
+          content_category: 'Funding Application',
+          content_name: eventData.deal_type,
+          source: eventData.utm_source,
+        });
+      }
+
       setFormData({ name: '', email: '', phone: '', projectDetails: '' });
       setErrors({});
       onSuccess?.();
     },
-    onError: (error: any) => {
+    onError: (error: Error | { message: string }) => {
       console.error('Form submission error:', error);
       if (error.message.includes('Invalid form data')) {
         // Handle validation errors
@@ -74,7 +137,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
   return (
     <div id="lead-form" className="bg-white rounded-lg p-8 border border-gray-200 shadow-lg">
       <div>
-        <h3 className="text-2xl font-medium mb-2 text-center text-gray-900">Get Your Terms</h3>
+        <h2 className="text-2xl font-medium mb-2 text-center text-gray-900">Get Your Terms</h2>
         <p className="text-center text-gray-600 mb-6 text-sm font-light">No credit check. No obligation. Just answers.</p>
       </div>
       
@@ -86,12 +149,15 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
         )}
         
         <div>
+          <label htmlFor="name" className="sr-only">Full Name</label>
           <input
+            id="name"
             type="text"
             name="name"
             placeholder="Enter your full name"
             value={formData.name}
             onChange={handleInputChange}
+            aria-label="Full Name"
             className="form-input w-full px-4 py-3 rounded text-gray-900 placeholder-gray-500 bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200"
             required
           />
@@ -99,12 +165,15 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
         </div>
         
         <div>
+          <label htmlFor="email" className="sr-only">Email Address</label>
           <input
+            id="email"
             type="email"
             name="email"
             placeholder="Your best email"
             value={formData.email}
             onChange={handleInputChange}
+            aria-label="Email Address"
             className="form-input w-full px-4 py-3 rounded text-gray-900 placeholder-gray-500 bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200"
             required
           />
@@ -112,12 +181,15 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
         </div>
         
         <div>
+          <label htmlFor="phone" className="sr-only">Phone Number</label>
           <input
+            id="phone"
             type="tel"
             name="phone"
             placeholder="Direct phone number"
             value={formData.phone}
             onChange={handleInputChange}
+            aria-label="Phone Number"
             className="form-input w-full px-4 py-3 rounded text-gray-900 placeholder-gray-500 bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200"
             required
           />
@@ -125,16 +197,26 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
         </div>
         
         <div>
+          <label htmlFor="projectDetails" className="sr-only">Project Details</label>
           <textarea
+            id="projectDetails"
             name="projectDetails"
             placeholder="Estimated deal size (e.g., $5M) & use of funds"
-            value={formData.projectDetails}
+            value={formData.projectDetails || ''}
             onChange={handleInputChange}
             rows={3}
+            aria-label="Project Details"
             className="form-input w-full px-4 py-3 rounded text-gray-900 placeholder-gray-500 resize-none bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200"
           />
           {errors.projectDetails && <p className="text-red-500 text-sm mt-1">{errors.projectDetails}</p>}
         </div>
+        
+        {/* Hidden UTM tracking fields */}
+        <input type="hidden" name="utm_source" value={utmParams.utm_source || ''} />
+        <input type="hidden" name="utm_medium" value={utmParams.utm_medium || ''} />
+        <input type="hidden" name="utm_campaign" value={utmParams.utm_campaign || ''} />
+        <input type="hidden" name="utm_term" value={utmParams.utm_term || ''} />
+        <input type="hidden" name="utm_content" value={utmParams.utm_content || ''} />
         
         <button
           type="submit"
