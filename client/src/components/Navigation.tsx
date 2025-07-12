@@ -52,7 +52,7 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
             <div className="flex items-center justify-center w-8 h-8 bg-[#5A00E0] rounded-md">
               <DollarSign className="h-5 w-5 text-white" />
             </div>
-            <span className="text-xl font-semibold tracking-tight text-gray-900">DirectCapital</span>
+            <span className="text-xl font-semibold tracking-tight text-gray-900">BRIXBUX Funding</span>
           </div>
 
           {/* Desktop Navigation */}

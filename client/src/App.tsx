@@ -50,7 +50,7 @@ function AnimatedStat({ value, prefix = '', suffix = '', label, delay }: Animate
   );
 }
 
-function DirectCapitalApp() {
+function BrixbuxFundingApp() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [currentCaseStudy, setCurrentCaseStudy] = useState(0);
@@ -257,7 +257,7 @@ function DirectCapitalApp() {
               {/* Professional headline badge */}
               <div className="inline-flex items-center px-4 py-2 bg-[#5A00E0]/10 rounded border border-[#5A00E0]/20">
                 <TrendingUp className="h-4 w-4 text-[#5A00E0] mr-2" />
-                <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Direct Funding for ISOs & Developers</span>
+                <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Fast MCA, Hard-Money & Bridge Loans for ISOs</span>
               </div>
               
               <h1 className="text-5xl lg:text-6xl leading-tight">
@@ -663,9 +663,9 @@ function DirectCapitalApp() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <DollarSign className="h-8 w-8 text-[#5A00E0]" />
-                <span className="text-xl font-bold text-white">DirectCapital</span>
+                <span className="text-xl font-bold text-white">BRIXBUX Funding</span>
               </div>
-              <p className="text-gray-400">Direct funding solutions for large-scale projects and commercial real estate.</p>
+              <p className="text-gray-400">Fast MCA, Hard-Money & Bridge Loans for ISOs. Direct funding solutions for large-scale projects and commercial real estate.</p>
             </div>
             
             <div>
@@ -677,7 +677,7 @@ function DirectCapitalApp() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4" />
-                  <span>deals@directcapital.com</span>
+                  <span>deals@brixbux.com</span>
                 </div>
               </div>
             </div>
@@ -693,7 +693,7 @@ function DirectCapitalApp() {
           </div>
           
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 DirectCapital. All rights reserved. Licensed lender in all 50 states.</p>
+            <p>&copy; 2024 BRIXBUX Funding. All rights reserved. Licensed lender in all 50 states.</p>
           </div>
         </div>
       </footer>
@@ -704,7 +704,7 @@ function DirectCapitalApp() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <DirectCapitalApp />
+      <BrixbuxFundingApp />
     </QueryClientProvider>
   );
 }

@@ -26,6 +26,17 @@ Completed transformation from dark to light theme while maintaining professional
 - Professional color palette: Maintained purple accent (#5A00E0) for brand consistency
 - Accessibility: Improved readability with higher contrast ratios
 
+### BRIXBUX Funding Rebranding (January 12, 2025)
+Complete rebranding from generic "DirectCapital" to "BRIXBUX Funding" with specialized ISO messaging:
+- Company Name: Updated all instances to "BRIXBUX Funding"
+- Tagline: Changed from "Direct Funding for ISOs & Developers" to "Fast MCA, Hard-Money & Bridge Loans for ISOs"
+- Meta Tags: Updated title to "BRIXBUX Funding Application – Fast Direct Capital" and description for ISO-specific messaging
+- Favicon: Created custom SVG favicon with BRIXBUX branding at /assets/favicon.svg
+- SEO: Added comprehensive OpenGraph and Twitter card meta tags for social media sharing
+- Contact Information: Updated email from deals@directcapital.com to deals@brixbux.com
+- Function Names: Updated React component from DirectCapitalApp to BrixbuxFundingApp
+- Copyright: Updated footer copyright to "© 2024 BRIXBUX Funding"
+
 ## System Architecture
 
 ### Frontend Architecture
