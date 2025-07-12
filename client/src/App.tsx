@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ChevronDown, DollarSign, Clock, Users, Shield, ArrowRight, CheckCircle, Star, Phone, Mail, MapPin, TrendingUp } from 'lucide-react';
+import { ChevronDown, DollarSign, Clock, Users, Shield, ArrowRight, CheckCircle, Star, Phone, Mail, MapPin, TrendingUp, Building, Utensils, Warehouse, ChevronLeft, ChevronRight } from 'lucide-react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '@/lib/queryClient';
 import LeadForm from '@/components/LeadForm';
@@ -7,21 +7,111 @@ import LeadForm from '@/components/LeadForm';
 function DirectCapitalApp() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [currentCaseStudy, setCurrentCaseStudy] = useState(0);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const heroImageRef = useRef<HTMLImageElement>(null);
+
+  const caseStudies = [
+    {
+      icon: Building,
+      amount: "$8M",
+      headline: "Closed Miami Redevelopment in 10 Days",
+      type: "Bridge Loan",
+      location: "Miami, FL",
+      challenge: "Traditional lenders wanted 45+ days",
+      solution: "Direct funding with in-house underwriting",
+      outcome: "Funded in 10 days, secured prime property",
+      details: "Multifamily redevelopment project needed fast capital to secure prime Miami property before competing buyers."
+    },
+    {
+      icon: Utensils,
+      amount: "$3M",
+      headline: "Funded Hospitality Expansion — 3 New Locations",
+      type: "MCA",
+      location: "Texas",
+      challenge: "Seasonal business needed flexible repayment",
+      solution: "Revenue-based MCA structure",
+      outcome: "Opened 3 new locations, 40% revenue growth",
+      details: "Restaurant group needed working capital for rapid expansion across multiple markets."
+    },
+    {
+      icon: Warehouse,
+      amount: "$15M",
+      headline: "Industrial Repositioning Funded in 7 Days",
+      type: "Hard Money",
+      location: "Atlanta, GA",
+      challenge: "Needed speed to beat competition",
+      solution: "Express underwriting process",
+      outcome: "Funded in 7 days, won the deal",
+      details: "Converting warehouses to flex office space. Time-sensitive opportunity required immediate action."
+    },
+    {
+      icon: Building,
+      amount: "$5M",
+      headline: "Retail Portfolio Acquisition — 48 Hours",
+      type: "Bridge Loan",
+      location: "Phoenix, AZ",
+      challenge: "Seller demanded quick close",
+      solution: "Pre-approved credit facility",
+      outcome: "Closed in 48 hours, 25% below market",
+      details: "Distressed retail portfolio needed immediate capital for quick acquisition."
+    },
+    {
+      icon: Warehouse,
+      amount: "$12M",
+      headline: "Logistics Center Expansion — Same Week",
+      type: "Hard Money",
+      location: "Denver, CO",
+      challenge: "Construction delays eating into profits",
+      solution: "Emergency funding within 5 days",
+      outcome: "Project completed, 30% profit margin",
+      details: "E-commerce logistics center needed capital injection to complete expansion on schedule."
+    },
+    {
+      icon: Utensils,
+      amount: "$2M",
+      headline: "Franchise Rollout — 6 Locations Funded",
+      type: "MCA",
+      location: "California",
+      challenge: "Franchise fees due across multiple locations",
+      solution: "Structured MCA with staggered funding",
+      outcome: "All 6 locations opened successfully",
+      details: "Fast-casual franchise needed capital for simultaneous multi-location expansion."
+    }
+  ];
 
   const testimonials = [
     {
       quote: "They saved our $5M acquisition in under 2 weeks. Without them, we'd have lost the deal.",
-      author: "James L., ISO Partner"
+      author: "James L., ISO Partner",
+      title: "Senior Partner",
+      company: "Premier Capital Group",
+      avatar: "JL",
+      rating: 5
     },
     {
       quote: "Direct funding with no broker delays. Exactly what we needed for our expansion.",
-      author: "Sarah M., Real Estate Developer"
+      author: "Sarah M., Real Estate Developer",
+      title: "Principal Developer",
+      company: "Meridian Properties",
+      avatar: "SM",
+      rating: 5
     },
     {
       quote: "Professional, fast, and reliable. They've become our go-to funding partner.",
-      author: "Michael R., Commercial Investor"
+      author: "Michael R., Commercial Investor",
+      title: "Managing Director",
+      company: "Apex Investments",
+      avatar: "MR",
+      rating: 5
+    },
+    {
+      quote: "Closed our $12M deal in 5 days. Incredible speed and professionalism.",
+      author: "David K., Project Manager",
+      title: "Senior Project Manager",
+      company: "Metro Development",
+      avatar: "DK",
+      rating: 5
     }
   ];
 
@@ -64,6 +154,21 @@ function DirectCapitalApp() {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCaseStudy((prev) => (prev + 1) % caseStudies.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextCaseStudy = () => {
+    setCurrentCaseStudy((prev) => (prev + 1) % caseStudies.length);
+  };
+
+  const prevCaseStudy = () => {
+    setCurrentCaseStudy((prev) => (prev - 1 + caseStudies.length) % caseStudies.length);
+  };
 
   const toggleFaq = (index: number) => {
     setExpandedFaq(expandedFaq === index ? null : index);
@@ -320,31 +425,101 @@ function DirectCapitalApp() {
             <p className="text-xl text-white/80">Real deals, real results, real speed</p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            <div className="p-8 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
-              <div className="text-3xl font-bold text-[#9F85FF] mb-4">$8M</div>
-              <h3 className="text-xl font-semibold mb-4">Bridge Loan — Miami Multifamily</h3>
-              <p className="text-white/80 mb-4">Redevelopment project needed fast capital to secure prime Miami property. Traditional lenders wanted 45+ days.</p>
-              <div className="text-[#9F85FF] font-semibold">✓ Funded in 10 days</div>
+          {/* Case Studies Carousel */}
+          <div className="relative mb-16">
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${currentCaseStudy * 100}%)` }}
+              >
+                {caseStudies.map((study, index) => {
+                  const IconComponent = study.icon;
+                  return (
+                    <div key={index} className="w-full flex-shrink-0 px-4">
+                      <div className="max-w-4xl mx-auto">
+                        <div className="case-study-card p-8 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10 hover:border-[#9F85FF]/30 transition-all duration-300 group">
+                          <div className="flex items-start space-x-6">
+                            <div className="flex-shrink-0">
+                              <div className="w-16 h-16 bg-[#9F85FF]/20 rounded-2xl flex items-center justify-center group-hover:bg-[#9F85FF]/30 transition-colors">
+                                <IconComponent className="h-8 w-8 text-[#9F85FF]" />
+                              </div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center space-x-4 mb-4">
+                                <div className="text-3xl font-bold text-[#9F85FF]">{study.amount}</div>
+                                <div className="text-sm text-white/60 bg-white/10 px-3 py-1 rounded-full">
+                                  {study.type} • {study.location}
+                                </div>
+                              </div>
+                              <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-[#9F85FF] transition-colors">
+                                {study.headline}
+                              </h3>
+                              <p className="text-white/80 mb-6 leading-relaxed">
+                                {study.details}
+                              </p>
+                              <div className="grid md:grid-cols-3 gap-4 text-sm">
+                                <div className="flex items-center space-x-2">
+                                  <div className="w-2 h-2 challenge-indicator rounded-full flex-shrink-0"></div>
+                                  <span className="text-white/70">
+                                    <strong className="text-red-400">Challenge:</strong> {study.challenge}
+                                  </span>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                  <div className="w-2 h-2 solution-indicator rounded-full flex-shrink-0"></div>
+                                  <span className="text-white/70">
+                                    <strong className="text-blue-400">Solution:</strong> {study.solution}
+                                  </span>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                  <div className="w-2 h-2 outcome-indicator rounded-full flex-shrink-0"></div>
+                                  <span className="text-white/70">
+                                    <strong className="text-green-400">Outcome:</strong> {study.outcome}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             
-            <div className="p-8 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
-              <div className="text-3xl font-bold text-[#9F85FF] mb-4">$3M</div>
-              <h3 className="text-xl font-semibold mb-4">MCA — Hospitality Group</h3>
-              <p className="text-white/80 mb-4">Restaurant group needed working capital for rapid expansion. Seasonal business required flexible repayment.</p>
-              <div className="text-[#9F85FF] font-semibold">✓ Opened 3 new locations</div>
-            </div>
-            
-            <div className="p-8 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
-              <div className="text-3xl font-bold text-[#9F85FF] mb-4">$15M</div>
-              <h3 className="text-xl font-semibold mb-4">Hard Money — Industrial Repositioning</h3>
-              <p className="text-white/80 mb-4">Converting warehouses to flex office space. Project required speed to beat competition.</p>
-              <div className="text-[#9F85FF] font-semibold">✓ Funded in 7 days</div>
+            {/* Navigation Controls */}
+            <div className="flex justify-center items-center space-x-6 mt-8">
+              <button
+                onClick={prevCaseStudy}
+                className="w-12 h-12 carousel-nav-btn rounded-full flex items-center justify-center group"
+              >
+                <ChevronLeft className="h-6 w-6 text-white group-hover:text-[#9F85FF] transition-colors" />
+              </button>
+              
+              <div className="flex space-x-2">
+                {caseStudies.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentCaseStudy(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentCaseStudy ? 'bg-[#9F85FF] scale-125 shadow-lg shadow-[#9F85FF]/50' : 'bg-white/30 hover:bg-white/50'
+                    }`}
+                  />
+                ))}
+              </div>
+              
+              <button
+                onClick={nextCaseStudy}
+                className="w-12 h-12 carousel-nav-btn rounded-full flex items-center justify-center group"
+              >
+                <ChevronRight className="h-6 w-6 text-white group-hover:text-[#9F85FF] transition-colors" />
+              </button>
             </div>
           </div>
           
+          {/* Enhanced Testimonials */}
           <div className="text-center">
-            <div className="relative h-32 overflow-hidden">
+            <div className="relative h-48 overflow-hidden">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
@@ -352,16 +527,27 @@ function DirectCapitalApp() {
                     index === currentTestimonial ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
-                  <blockquote className="text-2xl font-light italic text-white/90 mb-4 max-w-4xl mx-auto">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="flex items-center justify-center space-x-2">
-                    <div className="flex space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-[#9F85FF] fill-current" />
-                      ))}
+                  <div className="max-w-4xl mx-auto">
+                    <blockquote className="text-2xl font-light italic text-white/90 mb-6 leading-relaxed">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    <div className="flex items-center justify-center space-x-6">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-12 h-12 testimonial-avatar rounded-full flex items-center justify-center cursor-pointer">
+                          <span className="text-sm font-bold text-[#9F85FF]">{testimonial.avatar}</span>
+                        </div>
+                        <div className="text-left">
+                          <div className="text-white font-semibold">{testimonial.author}</div>
+                          <div className="text-white/60 text-sm">{testimonial.title}</div>
+                          <div className="text-white/40 text-xs">{testimonial.company}</div>
+                        </div>
+                      </div>
+                      <div className="flex space-x-1">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star key={i} className="h-5 w-5 text-[#9F85FF] fill-current drop-shadow-sm" />
+                        ))}
+                      </div>
                     </div>
-                    <span className="text-white/80">— {testimonial.author}</span>
                   </div>
                 </div>
               ))}
@@ -372,7 +558,7 @@ function DirectCapitalApp() {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial ? 'bg-[#9F85FF]' : 'bg-white/30'
+                    index === currentTestimonial ? 'bg-[#9F85FF] scale-125' : 'bg-white/30 hover:bg-white/50'
                   }`}
                 />
               ))}
