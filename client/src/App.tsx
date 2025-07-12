@@ -1,15 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ChevronDown, DollarSign, Clock, Users, Shield, ArrowRight, CheckCircle, Star, Phone, Mail, MapPin, Lock, Zap, TrendingUp } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ChevronDown, DollarSign, Clock, Users, Shield, ArrowRight, CheckCircle, Star, Phone, Mail, MapPin, TrendingUp } from 'lucide-react';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from '@/lib/queryClient';
+import LeadForm from '@/components/LeadForm';
 
-function App() {
+function DirectCapitalApp() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    projectDetails: ''
-  });
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const heroImageRef = useRef<HTMLImageElement>(null);
 
   const testimonials = [
@@ -71,18 +69,12 @@ function App() {
     setExpandedFaq(expandedFaq === index ? null : index);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You would typically send this data to your backend
+  const handleLeadSubmissionSuccess = () => {
+    setShowSuccessMessage(true);
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    }, 5000);
   };
 
   return (
@@ -170,84 +162,15 @@ function App() {
             
             {/* Lead Generation Form */}
             <div className="relative z-10">
-              <div className="bg-white/8 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl fade-in-up relative overflow-hidden" style={{animationDelay: '0.6s'}}>
-                {/* Enhanced Form Background Accents */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#9F85FF]/20 to-transparent rounded-full blur-2xl"></div>
-                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#5A00E0]/20 to-transparent rounded-full blur-2xl"></div>
-                
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-2 text-center">Get Your Terms</h3>
-                  <p className="text-center text-white/70 mb-6 text-sm">No credit check. No obligation. Just answers.</p>
+              {showSuccessMessage && (
+                <div className="mb-6 bg-green-500/20 border border-green-500/30 rounded-lg p-4 text-green-200 text-center">
+                  <div className="flex items-center justify-center space-x-2">
+                    <CheckCircle className="h-5 w-5" />
+                    <span>Thank you! We'll get back to you with terms within 24 hours.</span>
+                  </div>
                 </div>
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Enter your full name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="form-input w-full px-5 py-4 rounded-xl text-white placeholder-white/50 bg-white/10 border border-white/20 focus:border-[#9F85FF] focus:bg-white/15 transition-all duration-300 text-lg"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your best email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="form-input w-full px-5 py-4 rounded-xl text-white placeholder-white/50 bg-white/10 border border-white/20 focus:border-[#9F85FF] focus:bg-white/15 transition-all duration-300 text-lg"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Direct phone number"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="form-input w-full px-5 py-4 rounded-xl text-white placeholder-white/50 bg-white/10 border border-white/20 focus:border-[#9F85FF] focus:bg-white/15 transition-all duration-300 text-lg"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <textarea
-                      name="projectDetails"
-                      placeholder="Estimated deal size (e.g., $5M) & use of funds"
-                      value={formData.projectDetails}
-                      onChange={handleInputChange}
-                      rows={3}
-                      className="form-input w-full px-5 py-4 rounded-xl text-white placeholder-white/50 resize-none bg-white/10 border border-white/20 focus:border-[#9F85FF] focus:bg-white/15 transition-all duration-300 text-lg"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-[#9F85FF] to-[#8B5CF6] hover:from-[#8B5CF6] hover:to-[#7C3AED] text-white px-6 py-5 rounded-xl font-bold text-xl transition-all duration-300 transform hover:scale-[1.02] shadow-2xl group pulse-glow"
-                  >
-                    Get My Terms Now
-                    <ArrowRight className="inline-block ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                  
-                  {/* Trust marks below submit button */}
-                  <div className="flex items-center justify-center space-x-6 pt-3">
-                    <div className="flex items-center space-x-2 text-white/70">
-                      <Lock className="h-4 w-4 text-[#9F85FF]" />
-                      <span className="text-sm font-medium">Secure</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-white/70">
-                      <Zap className="h-4 w-4 text-[#9F85FF]" />
-                      <span className="text-sm font-medium">Instant Terms</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-white/70">
-                      <Shield className="h-4 w-4 text-[#9F85FF]" />
-                      <span className="text-sm font-medium">No Obligation</span>
-                    </div>
-                  </div>
-                </form>
-              </div>
+              )}
+              <LeadForm onSuccess={handleLeadSubmissionSuccess} />
             </div>
           </div>
         </div>
@@ -623,6 +546,14 @@ function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <DirectCapitalApp />
+    </QueryClientProvider>
   );
 }
 
