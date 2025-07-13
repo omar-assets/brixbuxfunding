@@ -33,9 +33,18 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
   const closeMenu = () => setIsMenuOpen(false);
 
   const handleNavClick = (href: string) => {
-    const element = document.querySelector(href);
+    const element = document.querySelector(href) as HTMLElement;
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Calculate navigation height dynamically
+      const navElement = document.querySelector('nav') as HTMLElement;
+      const navHeight = navElement ? navElement.offsetHeight : 60; // fallback to 60px
+      const additionalOffset = 20; // Extra padding for better visual spacing
+      const elementPosition = element.offsetTop - navHeight - additionalOffset;
+      
+      window.scrollTo({
+        top: Math.max(0, elementPosition), // Ensure we don't scroll to negative position
+        behavior: 'smooth'
+      });
     }
     closeMenu();
   };
@@ -44,10 +53,18 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
     if (onGetPreApproved) {
       onGetPreApproved();
     } else {
-      // Default behavior - scroll to form
-      const formElement = document.querySelector('#lead-form');
+      // Default behavior - scroll to form with proper offset
+      const formElement = document.querySelector('#lead-form') as HTMLElement;
       if (formElement) {
-        formElement.scrollIntoView({ behavior: 'smooth' });
+        const navElement = document.querySelector('nav') as HTMLElement;
+        const navHeight = navElement ? navElement.offsetHeight : 60; // fallback to 60px
+        const additionalOffset = 20; // Extra padding for better visual spacing
+        const elementPosition = formElement.offsetTop - navHeight - additionalOffset;
+        
+        window.scrollTo({
+          top: Math.max(0, elementPosition), // Ensure we don't scroll to negative position
+          behavior: 'smooth'
+        });
       }
     }
     closeMenu();
@@ -58,7 +75,7 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
       isVisible ? 'translate-y-0 opacity-100 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' : '-translate-y-full opacity-0'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3 lg:py-4">
+        <div className="flex justify-between items-center py-2 lg:py-2.5">
           {/* Logo */}
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -127,7 +144,7 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
         <div className={`lg:hidden transition-all duration-300 ease-in-out ${
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
-          <div className="pb-4 pt-2 space-y-1">
+          <div className="pb-3 pt-1 space-y-1">
             <button
               onClick={() => handleNavClick('#usp')}
               className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors text-base font-medium rounded-md"

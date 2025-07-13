@@ -196,7 +196,7 @@ function BrixbuxFundingApp() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section aria-labelledby="hero-heading" className="relative pt-44 pb-32 px-4 sm:px-6 lg:px-8">
+        <section aria-labelledby="hero-heading" className="relative pt-32 pb-32 px-4 sm:px-6 lg:px-8">
           {/* Professional subtle background pattern */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute inset-0" style={{
@@ -208,7 +208,7 @@ function BrixbuxFundingApp() {
             }} />
           </div>
           <div className="absolute top-8 left-0 right-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-              <Logo variant="dark" size="7xl" showText={false} />
+              <Logo variant="dark" size="8xl" showText={false} />
               <a 
                 href="https://brixbux.com"
                 className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-200 relative group"
@@ -321,7 +321,7 @@ function BrixbuxFundingApp() {
         </div>
       </section>
         {/* USP Section */}
-        <section id="usp" aria-labelledby="usp-heading" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">
+        <section id="usp" aria-labelledby="usp-heading" className="nav-offset py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
             <h2 id="usp-heading" className="text-4xl lg:text-5xl mb-6">
@@ -342,7 +342,7 @@ function BrixbuxFundingApp() {
         </div>
       </section>
         {/* Case Studies Section */}
-        <section id="case-studies" aria-labelledby="case-studies-heading" className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
+        <section id="case-studies" aria-labelledby="case-studies-heading" className="nav-offset py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 id="case-studies-heading" className="text-4xl lg:text-5xl mb-6 text-gray-900">Success Stories</h2>
@@ -489,7 +489,7 @@ function BrixbuxFundingApp() {
         </div>
       </section>
         {/* How It Works Section */}
-        <section id="how-it-works" aria-labelledby="how-it-works-heading" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section id="how-it-works" aria-labelledby="how-it-works-heading" className="nav-offset py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 id="how-it-works-heading" className="text-4xl lg:text-5xl mb-6 text-gray-900">Fast. Simple. Direct.</h2>
@@ -560,7 +560,7 @@ function BrixbuxFundingApp() {
         </div>
       </section>
         {/* FAQ Section */}
-        <section id="faq" aria-labelledby="faq-heading" className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section id="faq" aria-labelledby="faq-heading" className="nav-offset py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-20">
             <h2 id="faq-heading" className="text-4xl lg:text-5xl mb-6 text-gray-900">Frequently Asked Questions</h2>
@@ -634,7 +634,7 @@ function BrixbuxFundingApp() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center md:items-start md:text-left">
               <div className="mb-4">
-                <Logo variant="light-transparent" size="4xl" showText={false} />
+                <Logo variant="light-transparent" size="6xl" showText={false} />
               </div>
               <p className="text-white/80">Direct funding solutions for fast-growing businesses.</p>
             </div>

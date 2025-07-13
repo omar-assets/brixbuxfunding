@@ -249,8 +249,23 @@
 .form-input:focus {
   background: #FFFFFF;
   border-color: #5A00E0;
-  border-bottom-width: 2px;
-  outline: none;
+  box-shadow: 0 0 0 3px rgba(90, 0, 224, 0.1);
+}
+
+/* Navigation scroll offset utilities */
+.nav-offset {
+  scroll-margin-top: 70px; /* Account for fixed nav height */
+}
+
+.nav-offset-mobile {
+  scroll-margin-top: 60px; /* Smaller offset for mobile */
+}
+
+/* Responsive scroll offsets */
+@media (max-width: 1024px) {
+  .nav-offset {
+    scroll-margin-top: 60px;
+  }
 }
 
 .form-input::placeholder {

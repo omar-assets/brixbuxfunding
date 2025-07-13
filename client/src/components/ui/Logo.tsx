@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 interface LogoProps {
   variant?: 'light' | 'dark' | 'light-transparent';
-  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl' | '10xl';
   className?: string;
   showText?: boolean;
 }
@@ -13,7 +13,7 @@ export default function Logo({
   className,
   showText = true 
 }: LogoProps) {
-  const sizeClasses: Record<'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl', string> = {
+  const sizeClasses: Record<'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl' | '10xl', string> = {
     sm: 'h-8 w-8',
     md: 'h-10 w-10',
     lg: 'h-12 w-12',
@@ -23,10 +23,13 @@ export default function Logo({
     '4xl': 'h-28 w-28',
     '5xl': 'h-32 w-32',
     '6xl': 'h-40 w-40',
-    '7xl': 'h-48 w-48'
+    '7xl': 'h-48 w-48',
+    '8xl': 'h-56 w-56',
+    '9xl': 'h-64 w-64',
+    '10xl': 'h-80 w-80'
   };
 
-  const textSizeClasses: Record<'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl', string> = {
+  const textSizeClasses: Record<'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl' | '10xl', string> = {
     sm: 'text-xl',
     md: 'text-2xl',
     lg: 'text-3xl',
@@ -36,7 +39,10 @@ export default function Logo({
     '4xl': 'text-7xl',
     '5xl': 'text-8xl',
     '6xl': 'text-9xl',
-    '7xl': 'text-10xl'
+    '7xl': 'text-10xl',
+    '8xl': 'text-11xl',
+    '9xl': 'text-12xl',
+    '10xl': 'text-13xl'
   };
 
   const logoSrc = variant === 'dark' 

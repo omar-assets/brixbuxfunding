@@ -135,7 +135,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
   };
 
   return (
-    <div id="lead-form" className="bg-white rounded-lg p-8 border border-gray-200 shadow-lg">
+    <div id="lead-form" className="nav-offset bg-white rounded-lg p-8 border border-gray-200 shadow-lg">
       <div>
         <h2 className="text-2xl font-medium mb-2 text-center text-gray-900">Get Your Terms</h2>
         <p className="text-center text-gray-600 mb-6 text-sm font-light">No credit check. No obligation. Just answers.</p>
