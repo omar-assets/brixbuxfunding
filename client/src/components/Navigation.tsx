@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import Logo from './ui/Logo';
 
@@ -8,14 +8,25 @@ interface NavigationProps {
 
 export default function Navigation({ onGetPreApproved }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+      // Show only when scrolling down and not at the top
+      const isScrollingDown = currentScrollY > lastScrollY.current;
+      
+      if (currentScrollY > 10 && isScrollingDown) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+      
+      lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -44,7 +55,7 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' : 'bg-white border-b border-gray-200'
+      isVisible ? 'translate-y-0 opacity-100 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' : '-translate-y-full opacity-0'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 lg:py-4">
@@ -54,7 +65,7 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
             className="flex items-center"
             aria-label="Scroll to top"
           >
-            <Logo variant="dark" size="xl" showText={false} />
+            <Logo variant="dark" size="4xl" showText={false} />
           </button>
 
           {/* Desktop Navigation */}

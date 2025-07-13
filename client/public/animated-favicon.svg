@@ -1,0 +1,57 @@
+<svg width="100" height="100" viewBox="0 0 160 180" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .shield-outline, .shield-fill, .bb {
+      animation-duration: 2.5s;
+      animation-iteration-count: 1; /* Plays once on load */
+      animation-fill-mode: forwards;
+    }
+    .shield-outline {
+      fill: none;
+      stroke: #2B1B7D;
+      stroke-width: 12; /* Thicker for visibility at small sizes */
+      stroke-dasharray: 450;
+      stroke-dashoffset: 450;
+      animation-name: draw;
+    }
+    .shield-fill {
+      fill: #2B1B7D;
+      opacity: 0;
+      animation-name: fill;
+      animation-delay: 0.8s;
+    }
+    .bb {
+      fill: white;
+      opacity: 0;
+      transform-origin: center;
+      transform: scale(0.9);
+      animation-name: reveal;
+      animation-delay: 1.2s;
+    }
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes fill {
+      to { opacity: 1; }
+    }
+    @keyframes reveal {
+      to { opacity: 1; transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .shield-outline, .shield-fill, .bb { animation: none; }
+      .shield-fill { opacity: 1; }
+      .bb { opacity: 1; transform: scale(1); }
+      .shield-outline { stroke-dashoffset: 0; }
+    }
+  </style>
+  <path fill="#2B1B7D" d="M80 10 L150 35 L150 100 Q150 160 80 180 Q10 160 10 100 L10 35 Z"/>
+  <g>
+    <path fill="white" d="M41 55 L41 135 L65 135 C80 135 88 130 88 118 C88 108 82 104 77 102 C82 99 85 93 85 83 C85 70 75 65 62 65 L41 65 Z M55 95 L63 95 C68 95 71 92 71 87 C71 82 68 79 63 79 L55 79 Z M55 122 L65 122 C71 122 74 119 74 114 C74 109 71 106 65 106 L55 106 Z"/>
+    <path fill="white" d="M75 55 L75 135 L99 135 C114 135 122 130 122 118 C122 108 116 104 111 102 C116 99 119 93 119 83 C119 70 109 65 96 65 L75 65 Z M89 95 L97 95 C102 95 105 92 105 87 C105 82 102 79 97 79 L89 79 Z M89 122 L99 122 C105 122 108 119 108 114 C108 109 105 106 99 106 L89 106 Z"/>
+  </g>
+  <path class="shield-fill" d="M80 10 L150 35 L150 100 Q150 160 80 180 Q10 160 10 100 L10 35 Z"/>
+  <path class="shield-outline" d="M80 10 L150 35 L150 100 Q150 160 80 180 Q10 160 10 100 L10 35 Z"/>
+  <g class="bb">
+    <path d="M41 55 L41 135 L65 135 C80 135 88 130 88 118 C88 108 82 104 77 102 C82 99 85 93 85 83 C85 70 75 65 62 65 L41 65 Z M55 95 L63 95 C68 95 71 92 71 87 C71 82 68 79 63 79 L55 79 Z M55 122 L65 122 C71 122 74 119 74 114 C74 109 71 106 65 106 L55 106 Z"/>
+    <path d="M75 55 L75 135 L99 135 C114 135 122 130 122 118 C122 108 116 104 111 102 C116 99 119 93 119 83 C119 70 109 65 96 65 L75 65 Z M89 95 L97 95 C102 95 105 92 105 87 C105 82 102 79 97 79 L89 79 Z M89 122 L99 122 C105 122 108 119 108 114 C108 109 105 106 99 106 L89 106 Z"/>
+  </g>
+</svg> 

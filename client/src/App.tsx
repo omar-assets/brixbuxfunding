@@ -3,9 +3,10 @@ import { ChevronDown, DollarSign, Clock, Shield, ArrowRight, CheckCircle, Phone,
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '@/lib/queryClient';
 import LeadForm from '@/components/LeadForm';
-import MinimalNav from '@/components/MinimalNav';
+import Navigation from '@/components/Navigation';
 import { FeaturesSectionWithHoverEffects } from '@/components/ui/feature-section-with-hover-effects';
 import Logo from '@/components/ui/Logo';
+import LoadingScreen from '@/components/LoadingScreen';
 
 // Animated Stats Component
 
@@ -192,78 +193,88 @@ function BrixbuxFundingApp() {
 
   return (
     <div className="min-h-screen light-gradient-bg text-gray-900">
-      <MinimalNav />
+      <Navigation />
       <main>
         {/* Hero Section */}
-        <section aria-labelledby="hero-heading" className="pt-44 pb-32 px-4 sm:px-6 lg:px-8">
-        {/* Professional subtle background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
-            `,
-            backgroundSize: '100px 100px'
-          }} />
-        </div>
-        
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8 relative z-10">
-              {/* Professional headline badge */}
-              <div className="inline-flex items-center px-4 py-2 bg-[#5A00E0]/10 rounded border border-[#5A00E0]/20">
-                <TrendingUp className="h-4 w-4 text-[#5A00E0] mr-2" />
-                <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Fast MCA, Hard-Money & Bridge Loans for ISOs</span>
-              </div>
-              
-              <h1 id="hero-heading" className="text-5xl lg:text-6xl leading-tight">
-                <span className="block text-gray-900">Fund Deals Fast.</span>
-                <span className="block text-[#5A00E0] mt-2">Win More.</span>
-              </h1>
-              <p className="text-xl lg:text-2xl font-light text-gray-600 leading-relaxed mt-6">
-                Close bigger deals faster with direct capital.
-              </p>
-              
-              {/* Trust Badges */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8">
-                <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
-                  <Shield className="h-5 w-5 text-gray-600 mx-auto mb-3" />
-                  <p className="text-sm font-medium text-gray-900">$50K-$20M+</p>
-                  <p className="text-xs text-gray-500 mt-1">Deal Size</p>
+        <section aria-labelledby="hero-heading" className="relative pt-44 pb-32 px-4 sm:px-6 lg:px-8">
+          {/* Professional subtle background pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+              `,
+              backgroundSize: '100px 100px'
+            }} />
+          </div>
+          <div className="absolute top-8 left-0 right-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+              <Logo variant="dark" size="7xl" showText={false} />
+              <a 
+                href="https://brixbux.com"
+                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-200 relative group"
+              >
+                Back to Main Site
+                <span className="absolute -bottom-0.5 left-0 w-full h-px bg-gray-900 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
+              </a>
+          </div>
+
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8 relative z-10">
+                {/* Professional headline badge */}
+                <div className="inline-flex items-center px-4 py-2 bg-[#5A00E0]/10 rounded border border-[#5A00E0]/20">
+                  <TrendingUp className="h-4 w-4 text-[#5A00E0] mr-2" />
+                  <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Fast MCA, Hard-Money & Bridge Loans for ISOs</span>
                 </div>
-                <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
-                  <DollarSign className="h-5 w-5 text-gray-600 mx-auto mb-3" />
-                  <p className="text-sm font-medium text-gray-900">$200M+</p>
-                  <p className="text-xs text-gray-500 mt-1">Funded</p>
-                </div>
-                <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
-                  <Clock className="h-5 w-5 text-gray-600 mx-auto mb-3" />
-                  <p className="text-sm font-medium text-gray-900">24-Hour</p>
-                  <p className="text-xs text-gray-500 mt-1">Terms</p>
-                </div>
-                <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
-                  <MapPin className="h-5 w-5 text-gray-600 mx-auto mb-3" />
-                  <p className="text-sm font-medium text-gray-900">All 50</p>
-                  <p className="text-xs text-gray-500 mt-1">States</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Lead Generation Form */}
-            <div className="relative z-10">
-              {showSuccessMessage && (
-                <div className="mb-6 bg-green-500/20 border border-green-500/30 rounded-lg p-4 text-green-200 text-center">
-                  <div className="flex items-center justify-center space-x-2">
-                    <CheckCircle className="h-5 w-5" />
-                    <span>Thank you! We'll get back to you with terms within 24 hours.</span>
+                
+                <h1 id="hero-heading" className="text-5xl lg:text-6xl leading-tight">
+                  <span className="block text-gray-900">Fund Deals Fast.</span>
+                  <span className="block text-[#5A00E0] mt-2">Win More.</span>
+                </h1>
+                <p className="text-xl lg:text-2xl font-light text-gray-600 leading-relaxed mt-6">
+                  Close bigger deals faster with direct capital.
+                </p>
+                
+                {/* Trust Badges */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8">
+                  <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
+                    <Shield className="h-5 w-5 text-gray-600 mx-auto mb-3" />
+                    <p className="text-sm font-medium text-gray-900">$50K-$20M+</p>
+                    <p className="text-xs text-gray-500 mt-1">Deal Size</p>
+                  </div>
+                  <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
+                    <DollarSign className="h-5 w-5 text-gray-600 mx-auto mb-3" />
+                    <p className="text-sm font-medium text-gray-900">$200M+</p>
+                    <p className="text-xs text-gray-500 mt-1">Funded</p>
+                  </div>
+                  <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
+                    <Clock className="h-5 w-5 text-gray-600 mx-auto mb-3" />
+                    <p className="text-sm font-medium text-gray-900">24-Hour</p>
+                    <p className="text-xs text-gray-500 mt-1">Terms</p>
+                  </div>
+                  <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
+                    <MapPin className="h-5 w-5 text-gray-600 mx-auto mb-3" />
+                    <p className="text-sm font-medium text-gray-900">All 50</p>
+                    <p className="text-xs text-gray-500 mt-1">States</p>
                   </div>
                 </div>
-              )}
-              <LeadForm onSuccess={handleLeadSubmissionSuccess} />
+              </div>
+              
+              {/* Lead Generation Form */}
+              <div className="relative z-10">
+                {showSuccessMessage && (
+                  <div className="mb-6 bg-green-500/20 border border-green-500/30 rounded-lg p-4 text-green-200 text-center">
+                    <div className="flex items-center justify-center space-x-2">
+                      <CheckCircle className="h-5 w-5" />
+                      <span>Thank you! We'll get back to you with terms within 24 hours.</span>
+                    </div>
+                  </div>
+                )}
+                <LeadForm onSuccess={handleLeadSubmissionSuccess} />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
         {/* Problem-Agitation-Solution Section */}
         <section aria-labelledby="problem-solution-heading" className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto text-center relative">
@@ -621,9 +632,9 @@ function BrixbuxFundingApp() {
       <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-[#1B133E] border-t border-[#5A00E0]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
-            <div>
+            <div className="flex flex-col items-center text-center md:items-start md:text-left">
               <div className="mb-4">
-                <Logo variant="light-transparent" size="md" />
+                <Logo variant="light-transparent" size="4xl" showText={false} />
               </div>
               <p className="text-white/80">Direct funding solutions for fast-growing businesses.</p>
             </div>
@@ -679,9 +690,35 @@ function BrixbuxFundingApp() {
 }
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [isFadingOut, setIsFadingOut] = useState(false);
+
+  useEffect(() => {
+    const animationTime = 2500; // Animation duration
+    const fadeOutTime = 500; // CSS fade-out duration
+
+    const timer = setTimeout(() => {
+      setIsFadingOut(true); // Start fade-out
+      setTimeout(() => {
+        setIsLoading(false); // Remove loading screen from DOM
+      }, fadeOutTime);
+    }, animationTime);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
-      <BrixbuxFundingApp />
+      {isLoading && (
+        <div className={isFadingOut ? 'loading-screen-fade-out' : ''}>
+          <LoadingScreen />
+        </div>
+      )}
+      {!isLoading && (
+        <div className="main-content-fade-in">
+          <BrixbuxFundingApp />
+        </div>
+      )}
     </QueryClientProvider>
   );
 }

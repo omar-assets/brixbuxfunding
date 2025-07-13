@@ -35,7 +35,7 @@ The main logo component is located at `client/src/components/ui/Logo.tsx`. It au
 ### Props
 
 - `variant`: `'light' | 'dark' | 'light-transparent'` - Choose logo color variant
-- `size`: `'sm' | 'md' | 'lg' | 'xl'` - Logo size
+- `size`: `'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'` - Logo size
 - `className`: `string` - Additional CSS classes
 - `showText`: `boolean` - Whether to show "BRIXBUX Funding" text
 
@@ -43,17 +43,19 @@ The main logo component is located at `client/src/components/ui/Logo.tsx`. It au
 
 ### Current Usage Locations
 
-1. **Navigation.tsx** - Main navigation bar
-2. **MinimalNav.tsx** - Minimal navigation variant
-3. **App.tsx** - Footer
+1. **Navigation.tsx** - Main navigation bar (size="2xl")
+2. **MinimalNav.tsx** - Minimal navigation variant (size="2xl")
+3. **App.tsx** - Footer (size="xl")
 4. **index.html** - Favicon
 
 ### Responsive Design
 
-- Small screens: 24px × 24px (h-6 w-6)
-- Medium screens: 32px × 32px (h-8 w-8) 
-- Large screens: 40px × 40px (h-10 w-10)
-- Extra large: 48px × 48px (h-12 w-12) - Used for navigation branding
+- Small screens: 32px × 32px (h-8 w-8) - size="sm"
+- Medium screens: 40px × 40px (h-10 w-10) - size="md"
+- Large screens: 48px × 48px (h-12 w-12) - size="lg"
+- Extra large: 64px × 64px (h-16 w-16) - size="xl" - Used for footer
+- 2X large: 80px × 80px (h-20 w-20) - size="2xl" - Used for navigation branding
+- 3X large: 96px × 96px (h-24 w-24) - size="3xl" - Available for special use cases
 
 ### Accessibility Features
 
