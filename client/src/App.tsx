@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronDown, DollarSign, Clock, Shield, ArrowRight, CheckCircle, Phone, Mail, MapPin, TrendingUp, Building, Utensils, Warehouse, ChevronLeft, ChevronRight, Plus, Minus, Upload, FileCheck, Banknote } from 'lucide-react';
 import { QueryClientProvider } from '@tanstack/react-query';
+import { Analytics } from '@vercel/analytics/react';
 import { queryClient } from '@/lib/queryClient';
 import LeadForm from '@/components/LeadForm';
 import Navigation from '@/components/Navigation';
@@ -719,6 +720,7 @@ function App() {
           <BrixbuxFundingApp />
         </div>
       )}
+      <Analytics />
     </QueryClientProvider>
   );
 }
