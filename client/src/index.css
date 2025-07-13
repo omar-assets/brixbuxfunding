@@ -367,23 +367,59 @@
   /* Mobile-specific body adjustments */
   body {
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   
   /* Mobile heading adjustments */
   h1 {
-    font-size: 1.875rem; /* 30px */
+    font-size: 1.75rem; /* 28px */
     line-height: 1.2;
+    margin-bottom: 0.5rem;
   }
   
   h2 {
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.375rem; /* 22px */
     line-height: 1.3;
+    margin-bottom: 0.75rem;
   }
   
   h3 {
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.125rem; /* 18px */
     line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Mobile paragraph adjustments */
+  p {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  /* Mobile section spacing */
+  .mobile-section-padding {
+    padding: 2rem 1rem;
+  }
+  
+  /* Mobile container spacing */
+  .mobile-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Mobile button optimizations */
+  .mobile-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
+    min-height: 44px;
+    min-width: 44px;
+    border-radius: 6px;
+  }
+  
+  .mobile-btn-large {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    min-height: 48px;
   }
   
   /* Mobile button adjustments */
@@ -463,6 +499,22 @@
   .touch-friendly {
     padding: 0.75rem;
   }
+  
+  /* Better touch targets for buttons */
+  button, .btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Improve touch feedback */
+  .touch-feedback {
+    transition: background-color 0.15s ease;
+  }
+  
+  .touch-feedback:active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* Mobile landscape optimizations */
@@ -476,6 +528,76 @@
   /* Adjust navigation for landscape */
   .nav-landscape {
     height: 3rem;
+  }
+  
+  /* Reduce section padding in landscape */
+  .landscape-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Mobile-specific utility classes */
+@media (max-width: 640px) {
+  /* Mobile grid adjustments */
+  .mobile-grid-1 {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Mobile text alignment */
+  .mobile-text-center {
+    text-align: center;
+  }
+  
+  .mobile-text-left {
+    text-align: left;
+  }
+  
+  /* Mobile spacing utilities */
+  .mobile-space-y-2 > * + * {
+    margin-top: 0.5rem;
+  }
+  
+  .mobile-space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  .mobile-space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  /* Mobile flex utilities */
+  .mobile-flex-col {
+    flex-direction: column;
+  }
+  
+  .mobile-items-center {
+    align-items: center;
+  }
+  
+  /* Mobile card optimizations */
+  .mobile-card {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+  }
+  
+  /* Mobile form optimizations */
+  .mobile-form-input {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+  
+  /* Mobile carousel optimizations */
+  .mobile-carousel-nav {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
   }
 }
 
@@ -508,6 +630,46 @@
   
   .scroll-indicator {
     animation: none;
+  }
+  
+  /* Remove all animations for accessibility */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 768px) {
+  /* GPU acceleration for smoother animations */
+  .mobile-smooth {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Optimize scrolling performance */
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Mobile-specific font optimization */
+  body {
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Mobile image optimization */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+  }
+  
+  /* Reduce paint complexity on mobile */
+  .mobile-optimize {
+    contain: layout style paint;
   }
 }
 

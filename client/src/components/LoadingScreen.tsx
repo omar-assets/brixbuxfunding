@@ -10,7 +10,7 @@ export default function LoadingScreen() {
     lg: 'h-12 w-12',
     xl: 'h-16 w-16',
     '2xl': 'h-20 w-20',
-    '3xl': 'h-24 w-24'
+    '3xl': 'h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24'
   };
 
   // Animated SVG component
