@@ -197,7 +197,7 @@ function BrixbuxFundingApp() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section aria-labelledby="hero-heading" className="relative pt-32 pb-32 px-4 sm:px-6 lg:px-8">
+        <section aria-labelledby="hero-heading" className="relative pt-16 pb-16 sm:pt-24 sm:pb-24 lg:pt-32 lg:pb-32 px-4 sm:px-6 lg:px-8">
           {/* Professional subtle background pattern */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute inset-0" style={{
@@ -208,11 +208,18 @@ function BrixbuxFundingApp() {
               backgroundSize: '100px 100px'
             }} />
           </div>
-          <div className="absolute top-8 left-0 right-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-              <Logo variant="dark" size="8xl" showText={false} />
+          <div className="absolute top-4 sm:top-6 lg:top-8 left-0 right-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+              <div className="flex items-center">
+                <img 
+                  src="/logos/fundinglogodark_transparentbg.png"
+                  alt="BRIXBUX Funding Logo"
+                  className="logo-image transition-opacity duration-500 h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-32 lg:w-32"
+                  loading="lazy"
+                />
+              </div>
               <a 
                 href="https://brixbux.com"
-                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-200 relative group"
+                className="text-xs sm:text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-200 relative group"
               >
                 Back to Main Site
                 <span className="absolute -bottom-0.5 left-0 w-full h-px bg-gray-900 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
@@ -220,42 +227,42 @@ function BrixbuxFundingApp() {
           </div>
 
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-8 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <div className="space-y-6 lg:space-y-8 relative z-10">
                 {/* Professional headline badge */}
-                <div className="inline-flex items-center px-4 py-2 bg-[#5A00E0]/10 rounded border border-[#5A00E0]/20">
-                  <TrendingUp className="h-4 w-4 text-[#5A00E0] mr-2" />
-                  <span className="text-xs font-medium text-gray-700 tracking-wider uppercase">Fast MCA, Hard-Money & Bridge Loans for ISOs</span>
+                <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-[#5A00E0]/10 rounded border border-[#5A00E0]/20">
+                  <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4 text-[#5A00E0] mr-1.5 sm:mr-2" />
+                  <span className="text-xs sm:text-xs font-medium text-gray-700 tracking-wider uppercase">Fast MCA, Hard-Money & Bridge Loans for ISOs</span>
                 </div>
                 
-                <h1 id="hero-heading" className="text-5xl lg:text-6xl leading-tight">
+                <h1 id="hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
                   <span className="block text-gray-900">Fund Deals Fast.</span>
                   <span className="block text-[#5A00E0] mt-2">Win More.</span>
                 </h1>
-                <p className="text-xl lg:text-2xl font-light text-gray-600 leading-relaxed mt-6">
+                <p className="text-lg sm:text-xl lg:text-2xl font-light text-gray-600 leading-relaxed mt-4 lg:mt-6">
                   Close bigger deals faster with direct capital.
                 </p>
                 
                 {/* Trust Badges */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8">
-                  <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
-                    <Shield className="h-5 w-5 text-gray-600 mx-auto mb-3" />
-                    <p className="text-sm font-medium text-gray-900">$50K-$20M+</p>
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-6 lg:pt-8">
+                  <div className="text-center p-3 sm:p-4 bg-white rounded border border-gray-200 shadow-sm">
+                    <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 mx-auto mb-2 sm:mb-3" />
+                    <p className="text-xs sm:text-sm font-medium text-gray-900">$50K-$20M+</p>
                     <p className="text-xs text-gray-500 mt-1">Deal Size</p>
                   </div>
-                  <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
-                    <DollarSign className="h-5 w-5 text-gray-600 mx-auto mb-3" />
-                    <p className="text-sm font-medium text-gray-900">$200M+</p>
+                  <div className="text-center p-3 sm:p-4 bg-white rounded border border-gray-200 shadow-sm">
+                    <DollarSign className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 mx-auto mb-2 sm:mb-3" />
+                    <p className="text-xs sm:text-sm font-medium text-gray-900">$200M+</p>
                     <p className="text-xs text-gray-500 mt-1">Funded</p>
                   </div>
-                  <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
-                    <Clock className="h-5 w-5 text-gray-600 mx-auto mb-3" />
-                    <p className="text-sm font-medium text-gray-900">24-Hour</p>
+                  <div className="text-center p-3 sm:p-4 bg-white rounded border border-gray-200 shadow-sm">
+                    <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 mx-auto mb-2 sm:mb-3" />
+                    <p className="text-xs sm:text-sm font-medium text-gray-900">24-Hour</p>
                     <p className="text-xs text-gray-500 mt-1">Terms</p>
                   </div>
-                  <div className="text-center p-4 bg-white rounded border border-gray-200 shadow-sm">
-                    <MapPin className="h-5 w-5 text-gray-600 mx-auto mb-3" />
-                    <p className="text-sm font-medium text-gray-900">All 50</p>
+                  <div className="text-center p-3 sm:p-4 bg-white rounded border border-gray-200 shadow-sm">
+                    <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 mx-auto mb-2 sm:mb-3" />
+                    <p className="text-xs sm:text-sm font-medium text-gray-900">All 50</p>
                     <p className="text-xs text-gray-500 mt-1">States</p>
                   </div>
                 </div>
@@ -277,81 +284,81 @@ function BrixbuxFundingApp() {
           </div>
         </section>
         {/* Problem-Agitation-Solution Section */}
-        <section aria-labelledby="problem-solution-heading" className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
+        <section aria-labelledby="problem-solution-heading" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto text-center relative">
-          <h2 id="problem-solution-heading" className="text-4xl lg:text-5xl mb-16 leading-tight">
+          <h2 id="problem-solution-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-8 sm:mb-12 lg:mb-16 leading-tight">
             <span className="text-gray-900">Slow Funding</span>
-            <span className="text-red-500 mx-3">Kills</span>
+            <span className="text-red-500 mx-2 sm:mx-3">Kills</span>
             <span className="text-gray-900">Deals.</span>
             <br />
-            <span className="text-[#5A00E0] mt-4 block">We Fix That.</span>
+            <span className="text-[#5A00E0] mt-2 sm:mt-4 block">We Fix That.</span>
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-12 text-left max-w-4xl mx-auto mb-16">
-            <div className="space-y-4">
-              <h3 className="text-xl font-medium text-red-500 mb-6 uppercase tracking-wider">The Problem</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">Every day, profitable deals slip away.</p>
-              <p className="text-lg text-gray-700 leading-relaxed">Traditional lenders take weeks to decide.</p>
-              <p className="text-lg text-gray-700 leading-relaxed">Brokers add layers of complexity and delays.</p>
-              <p className="text-lg text-gray-700 leading-relaxed">Your clients need capital <span className="font-medium text-gray-900">now</span>, not next month.</p>
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 text-left max-w-4xl mx-auto mb-12 sm:mb-16">
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-lg sm:text-xl font-medium text-red-500 mb-4 sm:mb-6 uppercase tracking-wider">The Problem</h3>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">Every day, profitable deals slip away.</p>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">Traditional lenders take weeks to decide.</p>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">Brokers add layers of complexity and delays.</p>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">Your clients need capital <span className="font-medium text-gray-900">now</span>, not next month.</p>
             </div>
             
-            <div className="space-y-4">
-              <h3 className="text-xl font-medium text-[#5A00E0] mb-6 uppercase tracking-wider">Our Solution</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">As a <span className="font-medium text-gray-900">direct funder</span>, we eliminate middlemen.</p>
-              <p className="text-lg text-gray-700 leading-relaxed">We make decisions fast.</p>
-              <p className="text-lg text-gray-700 leading-relaxed">We fund faster.</p>
-              <p className="text-lg text-gray-700 leading-relaxed">We help you close more business.</p>
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-lg sm:text-xl font-medium text-[#5A00E0] mb-4 sm:mb-6 uppercase tracking-wider">Our Solution</h3>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">As a <span className="font-medium text-gray-900">direct funder</span>, we eliminate middlemen.</p>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">We make decisions fast.</p>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">We fund faster.</p>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">We help you close more business.</p>
             </div>
           </div>
           
-          <div className="mt-16">
-            <button className="bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-12 py-4 rounded text-lg font-medium transition-all duration-200 uppercase tracking-wider">
+          <div className="mt-12 sm:mt-16">
+            <button className="bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-8 py-3 sm:px-12 sm:py-4 rounded text-base sm:text-lg font-medium transition-all duration-200 uppercase tracking-wider">
               Stop Losing Deals — Get Direct Funding
-              <ArrowRight className="inline-block ml-3 h-5 w-5" />
+              <ArrowRight className="inline-block ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5" />
             </button>
           </div>
           
           {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2">
             <div className="scroll-indicator flex flex-col items-center text-gray-500 hover:text-gray-700 transition-colors cursor-pointer">
               <span className="text-xs font-medium mb-2 uppercase tracking-wider">See How We Do It</span>
-              <ChevronDown className="h-5 w-5" />
+              <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5" />
             </div>
           </div>
         </div>
       </section>
         {/* USP Section */}
-        <section id="usp" aria-labelledby="usp-heading" className="nav-offset py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">
+        <section id="usp" aria-labelledby="usp-heading" className="nav-offset py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <h2 id="usp-heading" className="text-4xl lg:text-5xl mb-6">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <h2 id="usp-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 sm:mb-6">
               The Direct Advantage
             </h2>
-            <p className="text-lg text-gray-600 font-light uppercase tracking-wider mb-3">Speed. Scale. Simplicity.</p>
-            <p className="text-base text-gray-500 max-w-2xl mx-auto">Why ISOs and developers choose us over traditional lenders</p>
+            <p className="text-base sm:text-lg text-gray-600 font-light uppercase tracking-wider mb-2 sm:mb-3">Speed. Scale. Simplicity.</p>
+            <p className="text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">Why ISOs and developers choose us over traditional lenders</p>
           </div>
           
           <FeaturesSectionWithHoverEffects />
           
-          <div className="text-center mt-20">
-            <button className="bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-12 py-4 rounded text-lg font-medium transition-all duration-200 uppercase tracking-wider">
+          <div className="text-center mt-12 sm:mt-16 lg:mt-20">
+            <button className="bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-8 py-3 sm:px-12 sm:py-4 rounded text-base sm:text-lg font-medium transition-all duration-200 uppercase tracking-wider">
               Submit Your Deal — Get Terms Today
-              <ArrowRight className="inline-block ml-3 h-5 w-5" />
+              <ArrowRight className="inline-block ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5" />
             </button>
           </div>
         </div>
       </section>
         {/* Case Studies Section */}
-        <section id="case-studies" aria-labelledby="case-studies-heading" className="nav-offset py-32 px-4 sm:px-6 lg:px-8 bg-white">
+        <section id="case-studies" aria-labelledby="case-studies-heading" className="nav-offset py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 id="case-studies-heading" className="text-4xl lg:text-5xl mb-6 text-gray-900">Success Stories</h2>
-            <p className="text-lg text-gray-600 font-light">Real deals, real results, real speed</p>
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <h2 id="case-studies-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 sm:mb-6 text-gray-900">Success Stories</h2>
+            <p className="text-base sm:text-lg text-gray-600 font-light">Real deals, real results, real speed</p>
           </div>
           
           {/* Case Studies Carousel */}
-          <div className="relative mb-16">
+          <div className="relative mb-12 sm:mb-16">
             <div className="overflow-hidden">
               <div 
                 className="flex transition-transform duration-700 ease-in-out"
@@ -360,44 +367,44 @@ function BrixbuxFundingApp() {
                 {caseStudies.map((study, index) => {
                   const IconComponent = study.icon;
                   return (
-                    <div key={index} className="w-full flex-shrink-0 px-4">
+                    <div key={index} className="w-full flex-shrink-0 px-2 sm:px-4">
                       <div className="max-w-4xl mx-auto">
-                        <div className="case-study-card p-8">
-                          <div className="flex items-start space-x-6">
+                        <div className="case-study-card p-4 sm:p-6 lg:p-8">
+                          <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
                             <div className="flex-shrink-0">
-                              <div className="w-12 h-12 bg-gray-100 rounded flex items-center justify-center border border-gray-200">
-                                <IconComponent className="h-6 w-6 text-gray-600" />
+                              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded flex items-center justify-center border border-gray-200">
+                                <IconComponent className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
                               </div>
                             </div>
                             <div className="flex-1 min-w-0">
-                              <div className="flex items-center space-x-4 mb-4">
-                                <div className="text-2xl font-medium text-[#5A00E0]">{study.amount}</div>
+                              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-3 sm:mb-4">
+                                <div className="text-xl sm:text-2xl font-medium text-[#5A00E0]">{study.amount}</div>
                                 <div className="text-xs text-gray-500 uppercase tracking-wider">
                                   {study.type} • {study.location}
                                 </div>
                               </div>
-                              <h3 className="text-xl font-medium mb-4 text-gray-900">
+                              <h3 className="text-lg sm:text-xl font-medium mb-3 sm:mb-4 text-gray-900">
                                 {study.headline}
                               </h3>
-                              <p className="text-gray-600 mb-6 leading-relaxed font-light">
+                              <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed font-light">
                                 {study.details}
                               </p>
-                              <div className="grid md:grid-cols-3 gap-4 text-sm">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 text-sm">
                                 <div className="flex items-start space-x-2">
                                   <div className="w-1.5 h-1.5 challenge-indicator rounded-full flex-shrink-0 mt-1.5" />
-                                  <span className="text-gray-600 text-sm">
+                                  <span className="text-gray-600 text-xs sm:text-sm">
                                     <span className="text-red-500 font-medium">Challenge:</span> {study.challenge}
                                   </span>
                                 </div>
                                 <div className="flex items-start space-x-2">
                                   <div className="w-1.5 h-1.5 solution-indicator rounded-full flex-shrink-0 mt-1.5" />
-                                  <span className="text-gray-600 text-sm">
+                                  <span className="text-gray-600 text-xs sm:text-sm">
                                     <span className="text-blue-500 font-medium">Solution:</span> {study.solution}
                                   </span>
                                 </div>
                                 <div className="flex items-start space-x-2">
                                   <div className="w-1.5 h-1.5 outcome-indicator rounded-full flex-shrink-0 mt-1.5" />
-                                  <span className="text-gray-600 text-sm">
+                                  <span className="text-gray-600 text-xs sm:text-sm">
                                     <span className="text-green-500 font-medium">Outcome:</span> {study.outcome}
                                   </span>
                                 </div>
@@ -413,16 +420,16 @@ function BrixbuxFundingApp() {
             </div>
             
             {/* Navigation Controls */}
-            <div className="flex justify-center items-center space-x-6 mt-8">
+            <div className="flex justify-center items-center space-x-4 sm:space-x-6 mt-6 sm:mt-8">
               <button
                 onClick={prevCaseStudy}
                 aria-label="Previous case study"
-                className="w-10 h-10 border border-gray-300 rounded flex items-center justify-center group hover:border-gray-400 transition-all"
+                className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 rounded flex items-center justify-center group hover:border-gray-400 transition-all"
               >
-                <ChevronLeft className="h-4 w-4 text-gray-600 group-hover:text-gray-900 transition-colors" />
+                <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 text-gray-600 group-hover:text-gray-900 transition-colors" />
               </button>
               
-              <div className="flex space-x-2">
+              <div className="flex space-x-1.5 sm:space-x-2">
                 {caseStudies.map((_, index) => (
                   <button
                     key={index}
@@ -438,15 +445,15 @@ function BrixbuxFundingApp() {
               <button
                 onClick={nextCaseStudy}
                 aria-label="Next case study"
-                className="w-10 h-10 border border-gray-300 rounded flex items-center justify-center group hover:border-gray-400 transition-all"
+                className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 rounded flex items-center justify-center group hover:border-gray-400 transition-all"
               >
-                <ChevronRight className="h-4 w-4 text-gray-600 group-hover:text-gray-900 transition-colors" />
+                <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 text-gray-600 group-hover:text-gray-900 transition-colors" />
               </button>
             </div>
           </div>
           
           {/* Testimonials */}
-          <div className="text-center mt-20">
+          <div className="text-center mt-12 sm:mt-16 lg:mt-20">
             <div className="relative h-32 overflow-hidden">
               {testimonials.map((testimonial, index) => (
                 <div
@@ -538,24 +545,24 @@ function BrixbuxFundingApp() {
         </div>
       </section>
         {/* Stats Section */}
-        <section aria-label="Company Statistics" className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
+        <section aria-label="Company Statistics" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
             <div className="text-center">
-              <div className="text-4xl font-medium text-gray-900 mb-2">500+</div>
-              <div className="text-sm text-gray-600 uppercase tracking-wider">Deals Closed</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 sm:mb-2">500+</div>
+              <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">Deals Closed</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-medium text-gray-900 mb-2">$200M+</div>
-              <div className="text-sm text-gray-600 uppercase tracking-wider">Capital Deployed</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 sm:mb-2">$200M+</div>
+              <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">Capital Deployed</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-medium text-gray-900 mb-2">24hrs</div>
-              <div className="text-sm text-gray-600 uppercase tracking-wider">Avg. Response</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 sm:mb-2">24hrs</div>
+              <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">Avg. Response</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-medium text-gray-900 mb-2">50</div>
-              <div className="text-sm text-gray-600 uppercase tracking-wider">States Licensed</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 sm:mb-2">50</div>
+              <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">States Licensed</div>
             </div>
           </div>
         </div>

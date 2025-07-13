@@ -15,41 +15,41 @@ export function FeaturesSectionWithHoverEffects() {
       title: "Fund Direct",
       description:
         "No middlemen, no brokers. We make decisions in-house and fund directly from our own capital.",
-      icon: <Shield className="h-6 w-6" />,
+      icon: <Shield className="h-5 w-5 sm:h-6 sm:w-6" />,
     },
     {
       title: "Fast Terms",
       description:
         "Submit today, get terms tomorrow. Fast decisions mean you never lose a time-sensitive deal.",
-      icon: <Clock className="h-6 w-6" />,
+      icon: <Clock className="h-5 w-5 sm:h-6 sm:w-6" />,
     },
     {
       title: "Big Deals",
       description:
         "$50K to $20M+ financing capability. We handle deals others can't or won't fund.",
-      icon: <DollarSign className="h-6 w-6" />,
+      icon: <DollarSign className="h-5 w-5 sm:h-6 sm:w-6" />,
     },
     {
       title: "Custom Fit",
       description:
         "MCA, bridge loans, hard money, and hybrid structures tailored to your deal's unique needs.",
-      icon: <CheckCircle className="h-6 w-6" />,
+      icon: <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6" />,
     },
     {
       title: "Trusted Partner",
       description:
         "We build lasting relationships with ISOs and repeat clients for ongoing deal flow.",
-      icon: <Users className="h-6 w-6" />,
+      icon: <Users className="h-5 w-5 sm:h-6 sm:w-6" />,
     },
     {
       title: "Nationwide",
       description:
         "Licensed and operating across all 50 states. Local expertise, national capability.",
-      icon: <ArrowRight className="h-6 w-6" />,
+      icon: <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />,
     },
   ];
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 py-10 max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 relative z-10 py-6 sm:py-8 lg:py-10 max-w-7xl mx-auto gap-4 sm:gap-0">
       {features.map((feature, index) => (
         <Feature key={feature.title} {...feature} index={index} />
       ))}
@@ -71,9 +71,12 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col lg:border-r py-10 relative group/feature border-gray-200",
-        (index === 0 || index === 3) && "lg:border-l border-gray-200",
-        index < 3 && "lg:border-b border-gray-200"
+        "flex flex-col py-6 sm:py-8 lg:py-10 relative group/feature border-gray-200",
+        "sm:border-r lg:border-r",
+        (index === 0 || index === 3) && "sm:border-l lg:border-l border-gray-200",
+        index < 3 && "sm:border-b lg:border-b border-gray-200",
+        // Mobile spacing
+        "px-4 sm:px-6 lg:px-10"
       )}
     >
       {index < 3 && (
@@ -82,16 +85,16 @@ const Feature = ({
       {index >= 3 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-gray-50 to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-gray-600">
+      <div className="mb-3 sm:mb-4 relative z-10 text-gray-600">
         {icon}
       </div>
-      <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-gray-300 group-hover/feature:bg-[#5A00E0] transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-gray-900">
+      <div className="text-base sm:text-lg font-bold mb-2 relative z-10">
+        <div className="absolute left-0 inset-y-0 h-4 sm:h-6 group-hover/feature:h-6 sm:group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-gray-300 group-hover/feature:bg-[#5A00E0] transition-all duration-200 origin-center" />
+        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-gray-900 pl-4 sm:pl-6">
           {title}
         </span>
       </div>
-      <p className="text-sm text-gray-600 max-w-xs relative z-10 px-10 font-light leading-relaxed">
+      <p className="text-sm font-light leading-relaxed text-gray-600 max-w-xs relative z-10 pl-4 sm:pl-6">
         {description}
       </p>
     </div>

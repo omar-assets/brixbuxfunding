@@ -14,11 +14,13 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      // Show only when scrolling down and not at the top
-      const isScrollingDown = currentScrollY > lastScrollY.current;
+      const isScrollingUp = currentScrollY < lastScrollY.current;
       
-      if (currentScrollY > 10 && isScrollingDown) {
+      // Show navigation when scrolling up or when near the top
+      if (currentScrollY > 10 && (isScrollingUp || currentScrollY < 100)) {
         setIsVisible(true);
+      } else if (currentScrollY <= 10) {
+        setIsVisible(false);
       } else {
         setIsVisible(false);
       }
@@ -82,7 +84,14 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
             className="flex items-center"
             aria-label="Scroll to top"
           >
-            <Logo variant="dark" size="4xl" showText={false} />
+            <div className="flex items-center">
+              <img 
+                src="/logos/fundinglogodark_transparentbg.png"
+                alt="BRIXBUX Funding Logo"
+                className="logo-image transition-opacity duration-500 h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 lg:h-20 lg:w-20"
+                loading="lazy"
+              />
+            </div>
           </button>
 
           {/* Desktop Navigation */}
@@ -118,7 +127,7 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
             <div className="h-6 w-px bg-gray-300" />
             <button
               onClick={handleGetPreApproved}
-              className="bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-6 py-2.5 rounded-md font-medium transition-all duration-200 text-sm uppercase tracking-wider shadow-sm hover:shadow-md"
+              className="bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-4 py-2 sm:px-6 sm:py-2.5 rounded-md font-medium transition-all duration-200 text-sm uppercase tracking-wider shadow-sm hover:shadow-md"
             >
               Get Pre-Approved
             </button>
@@ -142,9 +151,9 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
 
         {/* Mobile Navigation Menu */}
         <div className={`lg:hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}>
-          <div className="pb-3 pt-1 space-y-1">
+          <div className="pb-3 pt-1 space-y-1" style={{ maxHeight: 'calc(100vh - 120px)' }}>
             <button
               onClick={() => handleNavClick('#usp')}
               className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors text-base font-medium rounded-md"
