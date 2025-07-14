@@ -193,11 +193,11 @@ function BrixbuxFundingApp() {
 
 
   return (
-    <div className="min-h-screen light-gradient-bg text-gray-900">
+    <div className="min-h-screen light-gradient-bg text-gray-900 mobile-smooth-scroll">
       <Navigation />
-      <main>
+      <main className="mobile-gpu-accelerated">
         {/* Hero Section */}
-        <section aria-labelledby="hero-heading" className="relative pt-8 pb-8 sm:pt-16 sm:pb-16 md:pt-24 md:pb-24 lg:pt-32 lg:pb-32 px-4 sm:px-6 lg:px-8">
+        <section aria-labelledby="hero-heading" className="relative mobile-hero pt-6 pb-6 xs:pt-8 xs:pb-8 sm:pt-16 sm:pb-16 md:pt-24 md:pb-24 lg:pt-32 lg:pb-32 px-4 xs:px-5 sm:px-6 lg:px-8">
           {/* Professional subtle background pattern */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute inset-0" style={{
@@ -208,38 +208,61 @@ function BrixbuxFundingApp() {
               backgroundSize: '100px 100px'
             }} />
           </div>
-          <div className="absolute top-4 sm:top-6 lg:top-8 left-0 right-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          
+          {/* Mobile-first header - only show on larger screens as absolute */}
+          <div className="hidden sm:block absolute top-3 xs:top-4 sm:top-6 lg:top-8 left-0 right-0 max-w-7xl mx-auto px-4 xs:px-5 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center">
               <div className="flex items-center">
                 <img 
                   src="/logos/fundinglogodark_transparentbg.png"
                   alt="BRIXBUX Funding Logo"
-                  className="logo-image transition-opacity duration-500 h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-32 lg:w-32"
+                  className="logo-image transition-all duration-300 h-20 w-20 md:h-24 md:w-24 lg:h-32 lg:w-32 hover:scale-105"
                   loading="lazy"
                 />
               </div>
               <a 
                 href="https://brixbux.com"
-                className="text-xs sm:text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-200 relative group"
+                className="text-xs xs:text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-200 relative group tap-target p-2 -m-2 rounded-lg"
               >
                 Back to Main Site
-                <span className="absolute -bottom-0.5 left-0 w-full h-px bg-gray-900 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
+                <span className="absolute -bottom-0.5 left-2 right-2 h-px bg-gray-900 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
               </a>
+            </div>
+          </div>
+
+          {/* Mobile header - in normal flow */}
+          <div className="sm:hidden flex justify-between items-center mb-6 xs:mb-8">
+            <div className="flex items-center">
+              <img 
+                src="/logos/fundinglogodark_transparentbg.png"
+                alt="BRIXBUX Funding Logo"
+                className="logo-image transition-all duration-300 h-12 w-12 xs:h-16 xs:w-16 hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <a 
+              href="https://brixbux.com"
+              className="text-xs xs:text-sm font-medium text-gray-600 hover:text-gray-900 transition-all duration-200 relative group tap-target p-2 -m-2 rounded-lg"
+            >
+              Back to Main Site
+              <span className="absolute -bottom-0.5 left-2 right-2 h-px bg-gray-900 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100" />
+            </a>
           </div>
 
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="space-y-6 lg:space-y-8 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-6 xs:gap-8 lg:gap-16 items-center">
+              <div className="space-y-4 xs:space-y-6 lg:space-y-8 relative z-10 text-center lg:text-left">
                 {/* Professional headline badge */}
-                <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-[#5A00E0]/10 rounded border border-[#5A00E0]/20">
-                  <TrendingUp className="h-3 w-3 sm:h-4 sm:w-4 text-[#5A00E0] mr-1.5 sm:mr-2" />
-                  <span className="text-xs sm:text-xs font-medium text-gray-700 tracking-wider uppercase">Fast MCA, Hard-Money & Bridge Loans for ISOs</span>
+                <div className="inline-flex items-center px-3 py-1.5 xs:px-4 xs:py-2 sm:px-4 sm:py-2 bg-[#5A00E0]/10 rounded-lg border border-[#5A00E0]/20">
+                  <TrendingUp className="h-3 w-3 xs:h-4 xs:w-4 text-[#5A00E0] mr-1.5 xs:mr-2" />
+                  <span className="text-xs xs:text-sm font-medium text-gray-700 tracking-wider uppercase">Fast MCA, Hard-Money & Bridge Loans for ISOs</span>
                 </div>
                 
-                <h1 id="hero-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl leading-tight">
+                <h1 id="hero-heading" className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
                   <span className="block text-gray-900">Fund Deals Fast.</span>
-                  <span className="block text-[#5A00E0] mt-1 sm:mt-2">Win More.</span>
+                  <span className="block text-[#5A00E0] mt-1 xs:mt-2">Win More.</span>
                 </h1>
-                <p className="text-base sm:text-lg lg:text-2xl font-light text-gray-600 leading-relaxed mt-3 sm:mt-4 lg:mt-6">
+                <p className="text-base xs:text-lg sm:text-xl lg:text-2xl font-light text-gray-600 leading-relaxed mt-3 xs:mt-4 sm:mt-4 lg:mt-6">
                   Close bigger deals faster with direct capital.
                 </p>
                 
@@ -342,9 +365,9 @@ function BrixbuxFundingApp() {
           <FeaturesSectionWithHoverEffects />
           
           <div className="text-center mt-8 sm:mt-12 md:mt-16 lg:mt-20">
-            <button className="bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-6 py-3 sm:px-8 sm:py-3 lg:px-12 lg:py-4 rounded text-sm sm:text-base lg:text-lg font-medium transition-all duration-200 uppercase tracking-wider touch-feedback min-h-[44px]">
+            <button className="mobile-btn-primary bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-6 py-3 xs:px-8 xs:py-4 sm:px-8 sm:py-3 lg:px-12 lg:py-4 rounded-lg text-sm xs:text-base sm:text-base lg:text-lg font-medium transition-all duration-200 uppercase tracking-wider touch-feedback tap-target-lg shadow-lg hover:shadow-xl">
               Submit Your Deal — Get Terms Today
-              <ArrowRight className="inline-block ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5" />
+              <ArrowRight className="inline-block ml-2 xs:ml-3 sm:ml-3 h-4 w-4 xs:h-5 xs:w-5 sm:h-5 sm:w-5" />
             </button>
           </div>
         </div>
@@ -545,24 +568,24 @@ function BrixbuxFundingApp() {
         </div>
       </section>
         {/* Stats Section */}
-        <section aria-label="Company Statistics" className="py-8 sm:py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+        <section aria-label="Company Statistics" className="mobile-section py-6 xs:py-8 sm:py-16 md:py-24 lg:py-32 px-4 xs:px-5 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 sm:mb-2">500+</div>
-              <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">Deals Closed</div>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 xs:gap-6 sm:gap-8 lg:gap-8 text-center mobile-grid-2 tablet-grid-2 desktop-grid-4">
+            <div className="text-center mobile-card p-3 xs:p-4 sm:p-6 border-0 shadow-none bg-transparent">
+              <div className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 xs:mb-2">500+</div>
+              <div className="text-xs xs:text-sm text-gray-600 uppercase tracking-wider font-medium">Deals Closed</div>
             </div>
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 sm:mb-2">$200M+</div>
-              <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">Capital Deployed</div>
+            <div className="text-center mobile-card p-3 xs:p-4 sm:p-6 border-0 shadow-none bg-transparent">
+              <div className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 xs:mb-2">$200M+</div>
+              <div className="text-xs xs:text-sm text-gray-600 uppercase tracking-wider font-medium">Capital Deployed</div>
             </div>
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 sm:mb-2">24hrs</div>
-              <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">Avg. Response</div>
+            <div className="text-center mobile-card p-3 xs:p-4 sm:p-6 border-0 shadow-none bg-transparent">
+              <div className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 xs:mb-2">24hrs</div>
+              <div className="text-xs xs:text-sm text-gray-600 uppercase tracking-wider font-medium">Avg. Response</div>
             </div>
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 sm:mb-2">50</div>
-              <div className="text-xs sm:text-sm text-gray-600 uppercase tracking-wider">States Licensed</div>
+            <div className="text-center mobile-card p-3 xs:p-4 sm:p-6 border-0 shadow-none bg-transparent">
+              <div className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-medium text-gray-900 mb-1 xs:mb-2">50</div>
+              <div className="text-xs xs:text-sm text-gray-600 uppercase tracking-wider font-medium">States Licensed</div>
             </div>
           </div>
         </div>

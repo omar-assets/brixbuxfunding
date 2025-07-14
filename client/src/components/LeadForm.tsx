@@ -135,15 +135,15 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
   };
 
   return (
-    <div id="lead-form" className="nav-offset bg-white rounded-lg p-4 sm:p-6 lg:p-8 border border-gray-200 shadow-lg">
+    <div id="lead-form" className="nav-offset bg-white rounded-xl p-4 xs:p-5 sm:p-6 lg:p-8 border border-gray-200 shadow-lg mobile-card max-w-md xs:max-w-lg sm:max-w-xl lg:max-w-2xl mx-auto">
       <div>
-        <h2 className="text-xl sm:text-2xl font-medium mb-2 text-center text-gray-900">Get Your Terms</h2>
-        <p className="text-center text-gray-600 mb-4 sm:mb-6 text-xs sm:text-sm font-light">No credit check. No obligation. Just answers.</p>
+        <h2 className="text-xl xs:text-2xl sm:text-3xl font-medium mb-2 xs:mb-3 text-center text-gray-900">Get Your Terms</h2>
+        <p className="text-center text-gray-600 mb-4 xs:mb-5 sm:mb-6 text-sm xs:text-base font-light">No credit check. No obligation. Just answers.</p>
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-4 xs:space-y-5 sm:space-y-6 mobile-space-y-4">
         {errors.form && (
-          <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-3 text-red-200 text-sm">
+          <div className="bg-red-50 border-2 border-red-200 rounded-xl p-3 xs:p-4 text-red-700 text-sm xs:text-base">
             {errors.form}
           </div>
         )}
@@ -158,7 +158,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
             value={formData.name}
             onChange={handleInputChange}
             aria-label="Full Name"
-            className="form-input w-full px-4 py-3 sm:py-4 rounded text-gray-900 placeholder-gray-500 bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200 text-base min-h-[44px]"
+            className="mobile-form-input form-input w-full px-4 py-3 xs:py-4 rounded-xl text-gray-900 placeholder-gray-500 bg-white border-2 border-gray-300 focus:border-[#5A00E0] focus:ring-4 focus:ring-[#5A00E0]/20 transition-all duration-200 text-base touch-btn"
             autoComplete="name"
             required
           />
@@ -175,7 +175,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
             value={formData.email}
             onChange={handleInputChange}
             aria-label="Email Address"
-            className="form-input w-full px-4 py-3 sm:py-4 rounded text-gray-900 placeholder-gray-500 bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200 text-base min-h-[44px]"
+            className="mobile-form-input form-input w-full px-4 py-3 xs:py-4 rounded-xl text-gray-900 placeholder-gray-500 bg-white border-2 border-gray-300 focus:border-[#5A00E0] focus:ring-4 focus:ring-[#5A00E0]/20 transition-all duration-200 text-base touch-btn"
             autoComplete="email"
             inputMode="email"
             required
@@ -193,7 +193,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
             value={formData.phone}
             onChange={handleInputChange}
             aria-label="Phone Number"
-            className="form-input w-full px-4 py-3 sm:py-4 rounded text-gray-900 placeholder-gray-500 bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200 text-base min-h-[44px]"
+            className="mobile-form-input form-input w-full px-4 py-3 xs:py-4 rounded-xl text-gray-900 placeholder-gray-500 bg-white border-2 border-gray-300 focus:border-[#5A00E0] focus:ring-4 focus:ring-[#5A00E0]/20 transition-all duration-200 text-base touch-btn"
             autoComplete="tel"
             inputMode="tel"
             required
@@ -211,7 +211,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
             onChange={handleInputChange}
             rows={3}
             aria-label="Project Details"
-            className="form-input w-full px-4 py-3 sm:py-4 rounded text-gray-900 placeholder-gray-500 resize-none bg-white border border-gray-300 focus:border-[#5A00E0] focus:ring-2 focus:ring-[#5A00E0]/20 transition-all duration-200 text-base min-h-[80px]"
+            className="mobile-form-input form-input w-full px-4 py-3 xs:py-4 rounded-xl text-gray-900 placeholder-gray-500 resize-none bg-white border-2 border-gray-300 focus:border-[#5A00E0] focus:ring-4 focus:ring-[#5A00E0]/20 transition-all duration-200 text-base min-h-[80px] xs:min-h-[90px]"
           />
           {errors.projectDetails && <p className="text-red-500 text-sm mt-1">{errors.projectDetails}</p>}
         </div>
@@ -226,7 +226,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
         <button
           type="submit"
           disabled={submitLeadMutation.isPending}
-          className="w-full bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-6 py-4 rounded font-medium text-base sm:text-lg transition-all duration-200 uppercase tracking-wider disabled:opacity-70 disabled:cursor-not-allowed touch-feedback min-h-[48px]"
+          className="w-full bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-6 py-4 xs:py-5 rounded-xl font-medium text-base xs:text-lg transition-all duration-200 uppercase tracking-wider disabled:opacity-70 disabled:cursor-not-allowed touch-feedback tap-target-lg mobile-btn-full shadow-lg hover:shadow-xl"
         >
           {submitLeadMutation.isPending ? (
             "Submitting..."
@@ -239,18 +239,18 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
         </button>
         
         {/* Trust marks below submit button */}
-        <div className="flex items-center justify-center space-x-4 sm:space-x-6 pt-3">
-          <div className="flex items-center space-x-1 sm:space-x-2 text-gray-600">
-            <Lock className="h-3 w-3 text-gray-500" />
-            <span className="text-xs uppercase tracking-wider">Secure</span>
+        <div className="flex items-center justify-center space-x-3 xs:space-x-4 sm:space-x-6 pt-3 xs:pt-4 flex-wrap gap-y-2">
+          <div className="flex items-center space-x-1 xs:space-x-2 text-gray-600">
+            <Lock className="h-3 w-3 xs:h-4 xs:w-4 text-gray-500" />
+            <span className="text-xs xs:text-sm uppercase tracking-wider">Secure</span>
           </div>
-          <div className="flex items-center space-x-1 sm:space-x-2 text-gray-600">
-            <Zap className="h-3 w-3 text-gray-500" />
-            <span className="text-xs uppercase tracking-wider">Instant Terms</span>
+          <div className="flex items-center space-x-1 xs:space-x-2 text-gray-600">
+            <Zap className="h-3 w-3 xs:h-4 xs:w-4 text-gray-500" />
+            <span className="text-xs xs:text-sm uppercase tracking-wider">Instant Terms</span>
           </div>
-          <div className="flex items-center space-x-1 sm:space-x-2 text-gray-600">
-            <Shield className="h-3 w-3 text-gray-500" />
-            <span className="text-xs uppercase tracking-wider">No Obligation</span>
+          <div className="flex items-center space-x-1 xs:space-x-2 text-gray-600">
+            <Shield className="h-3 w-3 xs:h-4 xs:w-4 text-gray-500" />
+            <span className="text-xs xs:text-sm uppercase tracking-wider">No Obligation</span>
           </div>
         </div>
       </form>

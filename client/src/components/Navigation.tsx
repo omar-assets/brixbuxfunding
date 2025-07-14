@@ -81,14 +81,14 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
           {/* Logo */}
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center touch-feedback"
+            className="flex items-center touch-feedback tap-target p-2 -m-2 rounded-lg"
             aria-label="Scroll to top"
           >
             <div className="flex items-center">
               <img 
                 src="/logos/fundinglogodark_transparentbg.png"
                 alt="BRIXBUX Funding Logo"
-                className="logo-image transition-opacity duration-500 h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-16 lg:w-16 xl:h-20 xl:w-20"
+                className="logo-image transition-all duration-300 h-8 w-8 xs:h-10 xs:w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 xl:h-20 xl:w-20 hover:scale-105"
                 loading="lazy"
               />
             </div>
@@ -127,7 +127,7 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
             <div className="h-6 w-px bg-gray-300" />
             <button
               onClick={handleGetPreApproved}
-              className="bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-4 py-2 sm:px-6 sm:py-2.5 rounded-md font-medium transition-all duration-200 text-sm uppercase tracking-wider shadow-sm hover:shadow-md touch-feedback min-h-[44px]"
+              className="bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-4 py-2.5 xs:px-5 xs:py-3 sm:px-6 sm:py-3 rounded-lg font-medium transition-all duration-200 text-sm xs:text-base uppercase tracking-wider shadow-sm hover:shadow-md touch-feedback tap-target-lg"
             >
               Get Pre-Approved
             </button>
@@ -137,7 +137,7 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-600 hover:text-gray-900 transition-colors p-2 touch-feedback min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="text-gray-600 hover:text-gray-900 transition-colors p-2 touch-feedback tap-target rounded-lg flex items-center justify-center"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
@@ -156,32 +156,32 @@ export default function Navigation({ onGetPreApproved }: NavigationProps) {
           <div className="pb-3 pt-1 space-y-1" style={{ maxHeight: 'calc(100vh - 120px)' }}>
             <button
               onClick={() => handleNavClick('#usp')}
-              className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors text-base font-medium rounded-md touch-feedback min-h-[44px]"
+              className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors text-base font-medium rounded-lg touch-feedback tap-target mobile-nav-item"
             >
               Why Choose Us
             </button>
             <button
               onClick={() => handleNavClick('#case-studies')}
-              className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors text-base font-medium rounded-md touch-feedback min-h-[44px]"
+              className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors text-base font-medium rounded-lg touch-feedback tap-target mobile-nav-item"
             >
               Success Stories
             </button>
             <button
               onClick={() => handleNavClick('#how-it-works')}
-              className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors text-base font-medium rounded-md touch-feedback min-h-[44px]"
+              className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors text-base font-medium rounded-lg touch-feedback tap-target mobile-nav-item"
             >
               How It Works
             </button>
             <button
               onClick={() => handleNavClick('#faq')}
-              className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors text-base font-medium rounded-md touch-feedback min-h-[44px]"
+              className="block w-full text-left px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors text-base font-medium rounded-lg touch-feedback tap-target mobile-nav-item"
             >
               FAQ
             </button>
             <div className="pt-2">
               <button
                 onClick={handleGetPreApproved}
-                className="w-full bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-4 py-3 rounded-md font-medium transition-all duration-200 text-sm uppercase tracking-wider shadow-sm touch-feedback min-h-[48px]"
+                className="w-full bg-[#5A00E0] hover:bg-[#4A00D0] text-white px-4 py-3 rounded-lg font-medium transition-all duration-200 text-base uppercase tracking-wider shadow-sm touch-feedback tap-target-lg mobile-btn-full"
               >
                 Get Pre-Approved
               </button>
